@@ -1,5 +1,8 @@
 #!/bin/bash
 
+cd $HOME
+mkdir -p opt/src
+
 ##########################
 ## Cloudstation
 ##########################
@@ -62,6 +65,10 @@ sudo apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual
 sudo apt-get install -y python-software-properties
 sudo apt-get install -y mailutils
 sudo apt-get install -y software-properties-common
+
+cd $HOME/opt/src
+wget https://github.com/atom/atom/releases/download/v1.15.0/atom-amd64.deb 
+sudo dpkg -i atom-amd64.deb
 
 ##########################
 ## Python
@@ -131,6 +138,9 @@ sudo apt-get install -y oregano
 ## LTSPICE with wine
 # TODO
 
+## gtkwave
+# TODO
+
 ##########################
 ## STM32 F4 tools
 ##########################
@@ -153,6 +163,9 @@ sudo apt-get install -y oregano
 # Mentor Questasim
 # TODO
 
+
+# VIP SMartDV
+# TODO
 
 
 ##########################
