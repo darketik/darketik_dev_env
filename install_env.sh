@@ -238,6 +238,9 @@ chmod +x LTspiceXVII.exe
 ## papilio loader, arduino ide
 # TODO
 
+## arduino
+# TODO
+
 ## teensy
 # TODO
 
