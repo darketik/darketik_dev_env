@@ -65,6 +65,13 @@ sudo apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual
 sudo apt-get install -y python-software-properties
 sudo apt-get install -y mailutils
 sudo apt-get install -y software-properties-common
+sudo apt-get install -y samba samba-doc
+sudo apt-get install -y gitk
+sudo apt-get install -y system-config-samba
+sudo apt-get install -y cutecom
+sudo apt-get install -y nmap
+sudo apt-get install -y lua5.1
+sudo apt-get install -y liblua5.1-0-dev
 
 cd $HOME/opt/src
 wget https://github.com/atom/atom/releases/download/v1.15.0/atom-amd64.deb 
@@ -110,6 +117,8 @@ sudo apt-get install oracle-java8-set-default
 ## https://github.com/jenkinsci/gitlab-plugin#jenkins-job-configuration
 ##########################
 # TODO
+sudo apt-get install -y jenkins
+sudo apt-get install -y gitlab-ci-multi-runner
 
 ##########################
 ## vncserver realvnc
@@ -122,6 +131,39 @@ sudo apt-get install oracle-java8-set-default
 ##########################
 sudo apt-add-repository ppa:libreoffice/ppa:sudo apt-get update
 sudo apt-get install -y libreoffice
+
+## texlive, texmaker
+# TODO
+
+## gimp, inkscape (vector graphic)
+# TODO
+
+## PureData - pd-extended
+# TODO
+
+## superCollider 
+# TODO
+
+## Chuck
+# TODO
+
+## FaustLive
+# TODO
+
+## Processing 
+# TODO
+
+## Csound / Cecilia
+# TODO
+
+## openNI (gesture tracking) / openCV (computer vision)
+# TODO
+
+## Festival - speech synthesis
+# TODO
+
+## Gnaural - binaural audio generation
+# TODO
 
 
 ##########################
@@ -137,6 +179,12 @@ sudo apt-get install -y oregano
 
 ## LTSPICE with wine
 # TODO
+sudo apt-get install -y wine
+cd $HOME/opt/src
+wget http://ltspice.linear-tech.com/software/LTspiceXVII.exe
+chmod +x LTspiceXVII.exe
+./LTspiceXVII.exe
+
 
 ## gtkwave
 # TODO
@@ -166,6 +214,41 @@ sudo apt-get install -y oregano
 
 # VIP SMartDV
 # TODO
+
+
+
+## Openocd
+# TODO
+
+## Scilab
+# TODO
+
+## Octave
+# TODO
+
+## Gnu-gcc-arm
+# TODO
+
+## System Workbench for STM32
+# TODO
+
+## Stm32Cube MX
+# TODO
+
+## papilio loader, arduino ide
+# TODO
+
+## teensy
+# TODO
+
+
+
+
+
+
+
+
+
 
 
 ##########################
