@@ -1,5 +1,11 @@
 #!/bin/bash
 
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+locale-gen en_US.UTF-8
+dpkg-reconfigure locales
+
 cd $HOME
 mkdir -p opt/src
 
@@ -50,6 +56,39 @@ sudo apt-get update -qq
 sudo apt-get install -y enpass
 
 ##########################
+## vncserver realvnc
+##########################
+# TODO
+##sudo update-rc.d vncserver-x11-serviced defaults
+
+##########################
+## libreoffice repo
+##########################
+sudo apt-add-repository ppa:libreoffice/ppa:sudo apt-get update
+sudo apt-get install -y libreoffice
+
+## texlive, texmaker
+# TODO
+
+## gimp, inkscape (vector graphic)
+# TODO
+
+##########################
+## java8
+##########################
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install -y oracle-java8-installer
+java –version
+sudo apt-get install oracle-java8-set-default
+
+##########################
+## Install vpn server openvpn
+## http://www.evilbox.ro/linux/install-bridged-openvpn-on-ubuntu-14-04-x64-server-and-configure-windows-8-1-x64-client/
+##########################
+# TODO
+
+##########################
 ## Misc
 ##########################
 sudo apt-get install -y vim vim-gnome
@@ -73,6 +112,13 @@ sudo apt-get install -y nmap
 sudo apt-get install -y lua5.1
 sudo apt-get install -y liblua5.1-0-dev
 
+## basic dev tools
+sudo dpkg --add-architecture i386
+sudo apt-get update -qq
+sudo apt-get install -y build-essential autotools-dev autoconf pkg-config libusb-1.0-0 libusb-1.0-0-dev libftdi1 libftdi-dev git libc6:i386 libncurses5:i386 libstdc++6:i386 cowsay figlet language-pack-en libgtk-3-dev
+sudo locale-gen UTF-8
+
+
 cd $HOME/opt/src
 wget https://github.com/atom/atom/releases/download/v1.15.0/atom-amd64.deb 
 sudo dpkg -i atom-amd64.deb
@@ -80,34 +126,10 @@ sudo dpkg -i atom-amd64.deb
 ##########################
 ## Python
 ##########################
-sudo easy_install3 artifactory jenkinsapi sqlalchemy prettytable
+sudo apt-get install -y python2.7 python-numpy python-scipy python-matplotlib
 sudo apt-get install -y python3-pip
+sudo easy_install3 artifactory jenkinsapi sqlalchemy prettytable
 sudo pip3 install pyelftools
-
-##########################
-## java8
-##########################
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-sudo apt-get install -y oracle-java8-installer
-java –version
-sudo apt-get install oracle-java8-set-default
-
-
-##########################
-## flexlm license server deamon startup
-##Lmgrd license service 
-##	Added launch cmd into /etc/rc.local file
-##########################
-# TODO
-
-
-
-##########################
-## Install vpn server openvpn
-## http://www.evilbox.ro/linux/install-bridged-openvpn-on-ubuntu-14-04-x64-server-and-configure-windows-8-1-x64-client/
-##########################
-# TODO
 
 ##########################
 ## Jenkins tomcat7 method with war file
@@ -119,24 +141,6 @@ sudo apt-get install oracle-java8-set-default
 # TODO
 sudo apt-get install -y jenkins
 sudo apt-get install -y gitlab-ci-multi-runner
-
-##########################
-## vncserver realvnc
-##########################
-# TODO
-##sudo update-rc.d vncserver-x11-serviced defaults
-
-##########################
-## libreoffice repo
-##########################
-sudo apt-add-repository ppa:libreoffice/ppa:sudo apt-get update
-sudo apt-get install -y libreoffice
-
-## texlive, texmaker
-# TODO
-
-## gimp, inkscape (vector graphic)
-# TODO
 
 ## PureData - pd-extended
 # TODO
@@ -165,6 +169,11 @@ sudo apt-get install -y libreoffice
 ## Gnaural - binaural audio generation
 # TODO
 
+## Scilab
+# TODO
+
+## Octave
+# TODO
 
 ##########################
 ## Electronic EDA tools
@@ -190,44 +199,29 @@ chmod +x LTspiceXVII.exe
 # TODO
 
 ##########################
+## AVR tools
+##########################
+sudo apt-get install -y gcc-avr binutils-avr avr-libc avrdude
+
+##########################
 ## STM32 F4 tools
 ##########################
 ## sw4stm32 workbench
 # TODO
+
 ## stm32CubeMX
 # TODO
-
-
-##########################
-## Xilinx Vivado 
-##########################
-# TODO
-
-
-
-##########################
-## IC EDA tools
-##########################
-# Mentor Questasim
-# TODO
-
-
-# VIP SMartDV
-# TODO
-
-
 
 ## Openocd
 # TODO
 
-## Scilab
-# TODO
-
-## Octave
-# TODO
-
 ## Gnu-gcc-arm
-# TODO
+cd $HOME/opt/src
+wget https://launchpad.net/gcc-arm-embedded/5.0/5-2016-q3-update/+download/gcc-arm-none-eabi-5_4-2016q3-20160926-linux.tar.bz2
+tar xjf gcc-arm-none-eabi-5_4-2016q3-20160926-linux.tar.bz2
+sudo mv gcc-arm-none-eabi-5_4-2016q3 $HOME/opt
+cd $HOME/opt
+ln -s gcc-arm-none-eabi-5_4-2016q3 gcc-arm-none-eabi
 
 ## System Workbench for STM32
 # TODO
@@ -235,7 +229,7 @@ chmod +x LTspiceXVII.exe
 ## Stm32Cube MX
 # TODO
 
-## papilio loader, arduino ide
+## papilio loader
 # TODO
 
 ## arduino
@@ -244,63 +238,34 @@ chmod +x LTspiceXVII.exe
 ## teensy
 # TODO
 
+## papilio zap ide
+# TODO
 
-
-
-
-
-
-
-
-
-
-##########################
-## from olivier gillet
-##########################
-export LANGUAGE=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-locale-gen en_US.UTF-8
-dpkg-reconfigure locales
-
-# Install basic development tools
-sudo dpkg --add-architecture i386
-sudo apt-get update -qq
-sudo apt-get install -y build-essential autotools-dev autoconf pkg-config libusb-1.0-0 libusb-1.0-0-dev libftdi1 libftdi-dev git libc6:i386 libncurses5:i386 libstdc++6:i386 cowsay figlet language-pack-en
-sudo locale-gen UTF-8
-
-# Install python
-sudo apt-get install -y python2.7 python-numpy python-scipy python-matplotlib
-
-# Install development tools for avr
-sudo apt-get install -y gcc-avr binutils-avr avr-libc avrdude
-
-# Install openocd
-cd /home/vagrant
-wget -nv https://downloads.sourceforge.net/project/openocd/openocd/0.9.0/openocd-0.9.0.tar.gz
-tar xfz openocd-0.9.0.tar.gz
-cd openocd-0.9.0
+## openocd
+cd $HOME/opt/src
+wget https://downloads.sourceforge.net/project/openocd/openocd/0.10.0/openocd-0.10.0.tar.bz2
+tar xfz openocd-0.10.0.tar.gz
+pushd openocd-0.10.0
 ./configure --enable-ftdi --enable-stlink
 make
 sudo make install
-cd /home/vagrant
-rm -rf openocd-0.9.0
-rm *.tar.gz
+popd
+rm -rf openocd-0.10.0
 
-# Install stlink
-cd /home/vagrant
-wget -nv https://github.com/texane/stlink/archive/1.1.0.tar.gz
-tar xfz 1.1.0.tar.gz
-cd stlink-1.1.0
+## stlink
+cd $HOME/opt/src
+wget https://github.com/texane/stlink/archive/1.3.1.tar.gz
+tar xfz 1.3.1.tar.gz
+pushd stlink-1.3.1
 ./autogen.sh
 ./configure
 make
 sudo make install
 sudo cp 49-stlink*.rules /etc/udev/rules.d/
-cd /home/vagrant
-rm -rf stlink-1.1.0
-rm *.tar.gz
+popd
+rm -rf stlink-1.3.1
 
+# Install stlink
 # Allow non-root users to access USB devices such as Atmel AVR and Olimex
 # programmers, FTDI dongles...
 echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="15ba", ATTRS{idProduct}=="0003", GROUP="users", MODE="0666"' >> /etc/udev/rules.d/60-programmers.rules
@@ -311,13 +276,25 @@ echo 'SUBSYSTEMS=="usb", KERNEL=="ttyUSB*", ATTRS{idVendor}=="0403", ATTRS{idPro
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 
-# Install toolchain for STM32F
-cd /home/florent
-wget -nv https://launchpad.net/gcc-arm-embedded/4.8/4.8-2013-q4-major/+download/gcc-arm-none-eabi-4_8-2013q4-20131204-linux.tar.bz2
-tar xjf gcc-arm-none-eabi-4_8-2013q4-20131204-linux.tar.bz2
-sudo mv gcc-arm-none-eabi-4_8-2013q4 /usr/local/arm-4.8.3/
-rm *.tar.bz2
-# (We're progressively checking that all STM32F1 projects can also be built with
-# this gcc version instead of 4.5.2).
-ln -s /usr/local/arm-4.8.3 /usr/local/arm
+
+##########################
+## Xilinx Vivado 
+##########################
+# TODO
+
+##########################
+## flexlm license server deamon startup
+##Lmgrd license service 
+##	Added launch cmd into /etc/rc.local file
+##########################
+# TODO
+
+##########################
+## IC EDA tools
+##########################
+# Mentor Questasim
+# TODO
+
+# VIP SMartDV
+# TODO
 
