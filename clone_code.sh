@@ -37,25 +37,39 @@ install -v -D opt/bin $HOME/opt
 popd
 
 ## $HOME/work/lib
+mkdir -p $HOME/work/lib/externals
 # externals
 # 	mbed - https://github.com/mbedmicro/mbed.git
+git clone https://github.com/mbedmicro/mbed.git $HOME/work/lib/externals/mbed
 # 	newlib - git://sourceware.org/git/newlib-cygwin.git
+git clone git://sourceware.org/git/newlib-cygwin.git $HOME/work/lib/externals/newlib
+#		STM32CubeF4 v1.15.0
+# TODO get from sftp darketik NAS
+
 # libstm32f4 - https://github.com/darketik/libstm32f4.git 
+git clone https://github.com/darketik/libstm32f4.git $HOME/work/lib/libstm32f4
 # kicad 
+# TODO don't know yet how to manage it
 
 ## $HOME/work/projects
-# template project structure
-# mfos dual power supply 12v
+mkdir -p $HOME/work/projects/externals
+pushd $HOME/work/projects/externals
 # externals
 #		chibios - https://github.com/ChibiOS/ChibiOS.git
+git clone https://github.com/ChibiOS/ChibiOS.git chibios
 #		dfu-util - git://gitorious.org/dfu-util/dfu-util.git
+git clone git://gitorious.org/dfu-util/dfu-util.git dfu-util
 #		papilio_projects
 #		mios32 - svn
 #		mutable_instruments
 #		owl
 # 	sonic_potions xlr - https://github.com/SonicPotions/LXR.git
+git clone https://github.com/SonicPotions/LXR.git LXR
 # 	stlink - https://github.com/texane/stlink.git
+git clone https://github.com/texane/stlink.git stlink
 #		stm32loader - https://github.com/jsnyder/stm32loader.git
+git clone https://github.com/jsnyder/stm32loader.git stm32loader
+# mfos dual power supply 12v
 # lua
 # papilio_pro_fpga
 # rpi_2

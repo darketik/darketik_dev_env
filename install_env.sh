@@ -219,7 +219,6 @@ sudo apt-get update
 sudo apt-get install -y kicad geda pcb gerbv easyspice ngspice ngspice-doc gspiceui gnucap oregano
 
 ## LTSPICE with wine
-# TODO
 sudo apt-get install -y wine
 cd $HOME/opt/src
 wget http://ltspice.linear-tech.com/software/LTspiceXVII.exe
@@ -258,9 +257,9 @@ ln -s gcc-arm-none-eabi-5_4-2016q3 gcc-arm-none-eabi
 
 ## arduino
 # https://www.arduino.cc/en/Main/Software
-# TODO
 cd $HOME/opt/src
 wget https://www.arduino.cc/download_handler.php?f=/arduino-1.8.2-linux64.tar.xz
+# TODO
 
 ## teensy
 # https://www.pjrc.com/
