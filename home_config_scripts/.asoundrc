@@ -1,0 +1,40 @@
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# Native Instruments :: Traktor Audio 2 ALSA Configuration
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+#    Device                     Channels        Ports
+#    ------                     --------        -----
+#    TraktorAudio2ChannelA             2         12xx
+#    TraktorAudio2ChannelA             2         xx34
+#
+#    TraktorAudio2ChannelAB            4         1234
+
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# TraktorAudio2Channel{A,B} :: Raw 1x1 Stereo Devices
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+pcm.TraktorAudio2ChannelA { type plug; slave.pcm "hw:TraktorAudio2,0,0"; }
+pcm.TraktorAudio2ChannelB { type plug; slave.pcm "hw:TraktorAudio2,0,1"; }
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# TraktorAudio2ChannelAB :: Multi 2x2 Stereo Device (Ports 1-4, Channels A+B)
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+pcm.TraktorAudio2ChannelAB {
+        type multi
+
+        # Bind hardware devices
+        slaves.a.pcm TraktorAudio2ChannelA
+        slaves.a.channels 2
+        slaves.b.pcm TraktorAudio2ChannelB
+        slaves.b.channels 2
+
+        # Bind channels to virtual device
+        bindings.0.slave a
+        bindings.0.channel 0
+        bindings.1.slave a
+        bindings.1.channel 1
+        bindings.2.slave b
+        bindings.2.channel 0
+        bindings.3.slave b
+        bindings.3.channel 1
+}
+

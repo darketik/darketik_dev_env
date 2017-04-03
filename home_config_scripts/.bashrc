@@ -2,11 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-export SVN_EDITOR=vim
-export EDITOR=vim
-
-xset -b
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -43,7 +38,6 @@ fi
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color) color_prompt=yes;;
-    xterm-256color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -63,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '    
+    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
     PS1='${debian_chroot:+($debian_chroot)}\[\033[1;31m\]\u\[\033[00m\]@\[\033[1;35m\]\h\[\033[00m\]:\[\033[1;33m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
@@ -120,8 +114,17 @@ if ! shopt -oq posix; then
   fi
 fi
 
-########### Xilinx #############
-#+ if [ -f ~/xilinx.bashrc ]; then
-#+     . ~/xilinx.bashrc
-#+ fi
+export LM_LICENSE_FILE=1717@gwt-Precision-Tower-3620:99988@gwt-Precision-Tower-3620
+
+if [ -f ~/smartdv.bashrc ]; then
+    . ~/smartdv.bashrc
+fi
+if [ -f ~/mentor.bashrc ]; then
+    . ~/mentor.bashrc
+fi
+if [ -f ~/eagle.bashrc ]; then
+    . ~/eagle.bashrc
+fi
+export PULP_EMU_WWOLF=/home/gwt/opt/bin/wwolf 
+export PULP_EMU_ADDR="gwt@192.168.8.102" 
 
