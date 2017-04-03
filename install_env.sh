@@ -246,6 +246,8 @@ sudo apt-get install gtkwave
 ## stm32CubeMX
 # https://my.st.com/content/my_st_com/en/products/embedded-software/mcus-embedded-software/stm32-embedded-software/stm32cube-embedded-software/stm32cubef4.license%3d1491167185534.html
 # TODO get from sftp darketik NAS
+sudo ./SetupSTM32CubeMX-4.20.0.linux
+# /usr/local/STMicroelectronics/STM32Cube/STM32CubeMX/STM32CubeMX
 
 ## Gnu-gcc-arm
 cd $HOME/opt/src
