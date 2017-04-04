@@ -29,12 +29,15 @@ if [ -d "$HOME/opt/bin" ] ; then
 fi
 
 
-# set LD_LIBRARY_PATH so it includes user's private libs if it exists
-# LD_LIBRARY_PATH="$LD_LIBRARY_PATH"
+if [ -d "/opt/Xilinx/DocNav" ] ; then
+    PATH="/opt/Xilinx/DocNav:$PATH"
+fi
 
-# set VST_PATH for VST plugins
-# VST_PATH="/usr/lib/vst"
 
-XDG_DATA_HOME="$HOME/.local/share"
+ssh-add $HOME/.ssh/id_rsa
+
+
+
+
 
 
