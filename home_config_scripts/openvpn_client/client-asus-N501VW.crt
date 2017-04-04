@@ -1,0 +1,98 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 2 (0x2)
+    Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=FR, ST=Isere, L=Grenoble, O=GWT, OU=GWT_R&D, CN=GWT CA/name=EasyRSA/emailAddress=florent.rotenberg@gmail.com
+        Validity
+            Not Before: Dec 12 11:45:53 2016 GMT
+            Not After : Dec 10 11:45:53 2026 GMT
+        Subject: C=FR, ST=Isere, L=Grenoble, O=GWT, OU=GWT_R&D, CN=client-asus-N501VW/name=EasyRSA/emailAddress=florent.rotenberg@gmail.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:b5:06:60:39:76:1e:4e:55:35:7c:b3:71:66:8f:
+                    d6:4e:61:c6:21:54:59:0f:e6:03:f6:82:c9:a3:61:
+                    8d:24:9f:b8:d6:17:8a:3d:07:47:8a:73:ed:67:ab:
+                    c4:55:30:f5:42:61:54:ab:46:41:2c:4b:2c:52:dd:
+                    54:24:80:6e:13:12:c9:05:1f:88:e0:ac:3f:4b:23:
+                    6b:ee:04:d0:1a:ce:95:c2:60:aa:e6:1b:11:b1:42:
+                    b5:d1:34:8b:b7:95:21:b9:fb:d1:b9:bd:42:80:58:
+                    db:33:d7:6c:6f:07:94:43:28:76:48:7e:b0:95:8c:
+                    46:54:cb:0e:ae:54:71:24:84:8c:d8:ac:3f:4e:3a:
+                    51:1c:05:fa:10:cd:d6:9f:ed:42:8d:c6:36:f0:78:
+                    60:0a:8a:11:57:16:09:8d:d1:1f:cc:f9:ae:7e:31:
+                    ec:c1:3a:e6:4c:cf:de:d7:96:8f:21:30:f3:e8:35:
+                    0b:6d:67:f8:2e:7a:cd:b6:77:d4:f2:dc:e0:08:4b:
+                    72:db:3d:8b:49:ed:61:4b:f6:47:91:2d:11:f5:de:
+                    c6:9d:93:20:ce:0b:d2:db:c8:9d:c0:05:6d:b7:61:
+                    73:b1:96:ea:81:6f:90:d9:9f:01:f6:e4:41:8f:6c:
+                    79:40:9b:fa:ee:a0:f5:eb:e6:11:1a:07:76:dd:3a:
+                    74:4f
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Comment: 
+                Easy-RSA Generated Certificate
+            X509v3 Subject Key Identifier: 
+                C9:BD:28:2A:5C:88:69:32:77:AC:C8:E4:45:10:63:B1:B5:95:75:68
+            X509v3 Authority Key Identifier: 
+                keyid:5C:B1:7D:A4:29:D5:20:2E:86:64:E8:CE:6F:50:CC:4C:06:EB:F6:07
+                DirName:/C=FR/ST=Isere/L=Grenoble/O=GWT/OU=GWT_R&D/CN=GWT CA/name=EasyRSA/emailAddress=florent.rotenberg@gmail.com
+                serial:DD:C7:09:DE:EA:27:F2:C7
+
+            X509v3 Extended Key Usage: 
+                TLS Web Client Authentication
+            X509v3 Key Usage: 
+                Digital Signature
+            X509v3 Subject Alternative Name: 
+                DNS:client-asus-N501VW
+    Signature Algorithm: sha256WithRSAEncryption
+         84:d8:0d:b1:e2:af:74:1c:4a:91:be:7b:cb:ad:22:05:88:4f:
+         79:73:43:5d:0b:0a:0a:14:25:9a:bc:0e:42:2e:54:15:48:4c:
+         47:21:c3:1b:c3:a5:de:45:64:4a:70:60:c0:d6:ad:46:f8:c6:
+         2a:45:fd:3a:7f:e2:6a:ac:fb:2c:6e:5a:8d:bf:92:92:4a:93:
+         f7:29:8e:26:8d:a3:22:a6:4d:97:e5:e1:58:5b:6d:a1:e0:75:
+         3c:83:8e:c6:d6:55:c9:21:a9:2d:c9:2d:46:b2:56:29:53:ac:
+         eb:e4:00:40:31:90:68:91:57:06:5a:80:b9:02:f8:18:24:4c:
+         2d:4f:5f:4e:64:9c:7d:a6:4c:2d:9e:2a:01:25:2c:ce:17:27:
+         1f:e4:18:f9:f5:b1:f7:b2:01:b5:87:a5:44:b8:d6:97:bc:c7:
+         7f:f3:2f:ff:51:1a:f6:8f:b4:3c:24:74:05:c4:99:03:92:87:
+         5e:0d:b1:c7:af:22:d3:39:b2:7a:d7:8f:ad:18:69:22:ea:1f:
+         0d:9e:cf:9e:05:7f:e6:7f:61:ab:3a:e0:a5:e5:01:e2:53:ad:
+         d0:da:74:5e:49:6b:93:ea:85:f9:c2:6e:ba:1c:48:53:39:40:
+         64:0c:74:dc:8f:65:00:77:5c:5a:d4:d1:f7:19:c2:da:a7:93:
+         dd:7a:aa:8d
+-----BEGIN CERTIFICATE-----
+MIIFPjCCBCagAwIBAgIBAjANBgkqhkiG9w0BAQsFADCBnzELMAkGA1UEBhMCRlIx
+DjAMBgNVBAgTBUlzZXJlMREwDwYDVQQHEwhHcmVub2JsZTEMMAoGA1UEChMDR1dU
+MRAwDgYDVQQLFAdHV1RfUiZEMQ8wDQYDVQQDEwZHV1QgQ0ExEDAOBgNVBCkTB0Vh
+c3lSU0ExKjAoBgkqhkiG9w0BCQEWG2Zsb3JlbnQucm90ZW5iZXJnQGdtYWlsLmNv
+bTAeFw0xNjEyMTIxMTQ1NTNaFw0yNjEyMTAxMTQ1NTNaMIGrMQswCQYDVQQGEwJG
+UjEOMAwGA1UECBMFSXNlcmUxETAPBgNVBAcTCEdyZW5vYmxlMQwwCgYDVQQKEwNH
+V1QxEDAOBgNVBAsUB0dXVF9SJkQxGzAZBgNVBAMTEmNsaWVudC1hc3VzLU41MDFW
+VzEQMA4GA1UEKRMHRWFzeVJTQTEqMCgGCSqGSIb3DQEJARYbZmxvcmVudC5yb3Rl
+bmJlcmdAZ21haWwuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA
+tQZgOXYeTlU1fLNxZo/WTmHGIVRZD+YD9oLJo2GNJJ+41heKPQdHinPtZ6vEVTD1
+QmFUq0ZBLEssUt1UJIBuExLJBR+I4Kw/SyNr7gTQGs6VwmCq5hsRsUK10TSLt5Uh
+ufvRub1CgFjbM9dsbweUQyh2SH6wlYxGVMsOrlRxJISM2Kw/TjpRHAX6EM3Wn+1C
+jcY28HhgCooRVxYJjdEfzPmufjHswTrmTM/e15aPITDz6DULbWf4LnrNtnfU8tzg
+CEty2z2LSe1hS/ZHkS0R9d7GnZMgzgvS28idwAVtt2FzsZbqgW+Q2Z8B9uRBj2x5
+QJv67qD16+YRGgd23Tp0TwIDAQABo4IBdTCCAXEwCQYDVR0TBAIwADAtBglghkgB
+hvhCAQ0EIBYeRWFzeS1SU0EgR2VuZXJhdGVkIENlcnRpZmljYXRlMB0GA1UdDgQW
+BBTJvSgqXIhpMnesyORFEGOxtZV1aDCB1AYDVR0jBIHMMIHJgBRcsX2kKdUgLoZk
+6M5vUMxMBuv2B6GBpaSBojCBnzELMAkGA1UEBhMCRlIxDjAMBgNVBAgTBUlzZXJl
+MREwDwYDVQQHEwhHcmVub2JsZTEMMAoGA1UEChMDR1dUMRAwDgYDVQQLFAdHV1Rf
+UiZEMQ8wDQYDVQQDEwZHV1QgQ0ExEDAOBgNVBCkTB0Vhc3lSU0ExKjAoBgkqhkiG
+9w0BCQEWG2Zsb3JlbnQucm90ZW5iZXJnQGdtYWlsLmNvbYIJAN3HCd7qJ/LHMBMG
+A1UdJQQMMAoGCCsGAQUFBwMCMAsGA1UdDwQEAwIHgDAdBgNVHREEFjAUghJjbGll
+bnQtYXN1cy1ONTAxVlcwDQYJKoZIhvcNAQELBQADggEBAITYDbHir3QcSpG+e8ut
+IgWIT3lzQ10LCgoUJZq8DkIuVBVITEchwxvDpd5FZEpwYMDWrUb4xipF/Tp/4mqs
++yxuWo2/kpJKk/cpjiaNoyKmTZfl4VhbbaHgdTyDjsbWVckhqS3JLUayVilTrOvk
+AEAxkGiRVwZagLkC+BgkTC1PX05knH2mTC2eKgElLM4XJx/kGPn1sfeyAbWHpUS4
+1pe8x3/zL/9RGvaPtDwkdAXEmQOSh14NscevItM5snrXj60YaSLqHw2ez54Ff+Z/
+Yas64KXlAeJTrdDadF5Ja5PqhfnCbrocSFM5QGQMdNyPZQB3XFrU0fcZwtqnk916
+qo0=
+-----END CERTIFICATE-----
