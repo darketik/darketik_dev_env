@@ -59,16 +59,25 @@ pushd $HOME/work/projects/externals
 git clone https://github.com/ChibiOS/ChibiOS.git chibios
 #		dfu-util - git://gitorious.org/dfu-util/dfu-util.git
 git clone git://gitorious.org/dfu-util/dfu-util.git dfu-util
-#		papilio_projects
-#		mios32 - svn
-#		mutable_instruments
-#		owl
-# 	sonic_potions xlr - https://github.com/SonicPotions/LXR.git
-git clone https://github.com/SonicPotions/LXR.git LXR
 # 	stlink - https://github.com/texane/stlink.git
 git clone https://github.com/texane/stlink.git stlink
 #		stm32loader - https://github.com/jsnyder/stm32loader.git
 git clone https://github.com/jsnyder/stm32loader.git stm32loader
+#		papilio_projects
+#		mios32 - svn
+#		mutable_instruments
+# TODO
+#		owl
+# TODO
+# 	sonic_potions xlr - https://github.com/SonicPotions/LXR.git
+git clone https://github.com/SonicPotions/LXR.git LXR
+#   axoloti - 
+# TODO
+#   teensy audio library - 
+# TODO
+#   thing workshop stm32f4 synth
+# TODO
+
 # mfos dual power supply 12v
 # lua
 # papilio_pro_fpga
