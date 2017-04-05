@@ -46,6 +46,14 @@ sudo dpkg -i synology-cloud-station-3501.x86_64.deb
 # TODO
 
 ##########################
+## spotify family
+##########################
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
+echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt-get update
+sudo apt-get install -y spotify-client
+
+##########################
 ## Enpass
 ##########################
 sudo su
@@ -86,7 +94,34 @@ sudo apt-get install oracle-java8-set-default
 ## Install vpn server openvpn
 ## http://www.evilbox.ro/linux/install-bridged-openvpn-on-ubuntu-14-04-x64-server-and-configure-windows-8-1-x64-client/
 ##########################
+sudo apt-get install -y bridge-utils openvpn libssl-dev openssl
+# edit /etc/network/interfaces
 # TODO
+# edit /etc/sysctl.conf
+# TODO
+sudo apt-get install -y easy-rsa
+sudo su
+make-cadir /etc/openvpn/easy-rsa
+# edit /etc/openvpn/easy-rsa/vars
+# TODO
+
+# gen server key
+cd /etc/openvpn/easy-rsa/
+source vars
+./clean-all
+./build-dh
+./pkitool --initca
+./pkitool --server server
+cd keys
+openvpn --genkey --secret ta.key
+cp server.crt server.key ca.crt dh2048.pem ta.key /etc/openvpn/
+
+# gen client key
+cd /etc/openvpn/easy-rsa/
+source vars
+./pkitool client-name
+
+# TODO finish openvpn flow
 
 ##########################
 ## Audio tools
