@@ -72,10 +72,16 @@ git clone https://github.com/jsnyder/stm32loader.git stm32loader
 # 	sonic_potions xlr - https://github.com/SonicPotions/LXR.git
 git clone https://github.com/SonicPotions/LXR.git LXR
 #   axoloti - 
+git clone https://github.com/axoloti/axoloti.git axoloti
+git clone https://github.com/axoloti/axoloti-contrib.git axoloti-contrib
+git clone https://github.com/axoloti/axoloti-factory.git axoloti-factory
 # TODO
 #   teensy audio library - 
+git clone https://github.com/PaulStoffregen/Audio.git teensy_audio_library
 # TODO
 #   thing workshop stm32f4 synth
+git clone https://github.com/thi-ng/ws-ldn-3.git thing_diy_workshop_synth
+#   preenFM2
 # TODO
 
 # mfos dual power supply 12v
