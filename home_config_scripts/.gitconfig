@@ -36,6 +36,7 @@
 [alias]
 	ll = log --graph --oneline --decorate --all
 	staged = diff --cached
+	d = difftool
 [diff]
 	tool = vimdiff
 [difftool]

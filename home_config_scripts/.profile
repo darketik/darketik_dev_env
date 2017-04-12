@@ -19,7 +19,7 @@ fi
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/opt/bin" ] ; then
     PATH="$HOME/opt/bin:$PATH"
-    PATH="$HOME/opt/bin/gcc-arm-none-eabi-4_9-2014q4/bin:$PATH"
+    PATH="$HOME/opt/bin/gcc-arm-none-eabi/bin:$PATH"
     PATH="$HOME/opt/bin/eclipse:$PATH"
  #   PATH="$HOME/opt/bin/thunderbird:$PATH"
  #   PATH="$HOME/opt/bin/scilab-5.5.0/bin:$PATH"

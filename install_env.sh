@@ -4,7 +4,7 @@ export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 locale-gen en_US.UTF-8
-dpkg-reconfigure locales
+sudo dpkg-reconfigure locales
 
 cd $HOME
 mkdir -p opt/src
@@ -72,7 +72,8 @@ sudo apt-get install -y enpass
 ##########################
 ## libreoffice repo
 ##########################
-sudo apt-add-repository ppa:libreoffice/ppa:sudo apt-get update
+sudo apt-add-repository ppa:libreoffice/ppa
+sudo apt-get update
 sudo apt-get install -y libreoffice
 
 ## texlive, texmaker
@@ -88,38 +89,38 @@ sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install -y oracle-java8-installer
 java –version
-sudo apt-get install oracle-java8-set-default
+sudo apt-get install -y oracle-java8-set-default
 
 ##########################
 ## Install vpn server openvpn
 ## http://www.evilbox.ro/linux/install-bridged-openvpn-on-ubuntu-14-04-x64-server-and-configure-windows-8-1-x64-client/
 ##########################
-sudo apt-get install -y bridge-utils openvpn libssl-dev openssl
-# edit /etc/network/interfaces
-# TODO
-# edit /etc/sysctl.conf
-# TODO
-sudo apt-get install -y easy-rsa
-sudo su
-make-cadir /etc/openvpn/easy-rsa
-# edit /etc/openvpn/easy-rsa/vars
-# TODO
+#+ sudo apt-get install -y bridge-utils openvpn libssl-dev openssl
+#+ # edit /etc/network/interfaces
+#+ # TODO
+#+ # edit /etc/sysctl.conf
+#+ # TODO
+#+ sudo apt-get install -y easy-rsa
+#+ sudo su
+#+ make-cadir /etc/openvpn/easy-rsa
+#+ # edit /etc/openvpn/easy-rsa/vars
+#+ # TODO
 
-# gen server key
-cd /etc/openvpn/easy-rsa/
-source vars
-./clean-all
-./build-dh
-./pkitool --initca
-./pkitool --server server
-cd keys
-openvpn --genkey --secret ta.key
-cp server.crt server.key ca.crt dh2048.pem ta.key /etc/openvpn/
+#+ # gen server key
+#+ cd /etc/openvpn/easy-rsa/
+#+ source vars
+#+ ./clean-all
+#+ ./build-dh
+#+ ./pkitool --initca
+#+ ./pkitool --server server
+#+ cd keys
+#+ openvpn --genkey --secret ta.key
+#+ cp server.crt server.key ca.crt dh2048.pem ta.key /etc/openvpn/
 
-# gen client key
-cd /etc/openvpn/easy-rsa/
-source vars
-./pkitool client-name
+#+ # gen client key
+#+ cd /etc/openvpn/easy-rsa/
+#+ source vars
+#+ ./pkitool client-name
 
 # TODO finish openvpn flow
 
@@ -137,6 +138,8 @@ sudo apt-get install -y libjack-jackd2-0 libjack-jackd2-dev pulseaudio-module-ja
 ## PureData - pd-extended
 # https://github.com/agraef/purr-data
 cd $HOME/opt/src
+sudo apt-get install libglew-dev libmagick++-dev libftgl2 libgmerlin0 libgmerlin-avdec1 libavifile-0.7c2 libmpeg3-dev libmpeg3-2 libquicktime2 libdc1394-22 libfftw3-3 libmp3lame0
+# if you have troubles with previous cmd, exec: sudo apt-get -f install -y
 wget https://github.com/agraef/purr-data/releases/download/2.1.2/pd-l2ork-2.1.2-ubuntu_14.04-x86_64.deb
 sudo dpkg -i pd-l2ork-2.1.2-ubuntu_14.04-x86_64.deb
 
@@ -151,10 +154,24 @@ sudo apt-get install -y supercollider
 sudo apt-get install -y libsndfile1-dev
 cd $HOME/opt/src
 wget http://chuck.cs.princeton.edu/release/files/chuck-1.3.5.2.tgz
+tar -xzvf chuck-1.3.5.2.tgz
+cd chuck-1.3.5.2/src
+make linux-jack
+sudo make install
+cd $HOME/opt/src
+rm -rf chuck-1.3.5.2
 
+# miniAudicle - gui for chuck
 # needs qt 4.8+, alsa or jack
+sudo apt-get install -y make gcc g++ bison flex libasound2-dev libsndfile1-dev libqt4-dev libqscintilla2-dev  libjack-jackd2-dev
+cd $HOME/opt/src
 wget http://audicle.cs.princeton.edu/mini/release/files/miniAudicle-1.3.5.2.tgz
-
+tar -xzvf miniAudicle-1.3.5.2.tgz
+cd miniAudicle-1.3.5.2/src
+make linux-jack
+sudo make install
+cd $HOME/opt/src
+rm -rf miniAudicle-1.3.5.2
 
 ## FaustLive
 # TODO
@@ -177,10 +194,7 @@ wget http://audicle.cs.princeton.edu/mini/release/files/miniAudicle-1.3.5.2.tgz
 ##########################
 ## Misc
 ##########################
-sudo apt-get install -y vim vim-gnome
-sudo apt-get install -y vim-scripts exuberant-ctags
-sudo apt-get install -y gnupg2
-sudo apt-get install -y openssh-server
+sudo apt-get install -y vim vim-gnome vim-scripts exuberant-ctags gnupg2 openssh-server
 sudo apt-get install -y git g++ python3-setuptools swig3.0 python3-dev libjpeg-dev libz-dev cmake lib32z1 lib32ncurses5 ant openjdk-7-jdk
 sudo apt-get install -y csh
 sudo apt-get install -y python-yaml
@@ -190,7 +204,7 @@ sudo apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual
 sudo apt-get install -y python-software-properties
 sudo apt-get install -y mailutils
 sudo apt-get install -y software-properties-common
-sudo apt-get install -y samba samba-doc
+sudo apt-get install -y samba 
 sudo apt-get install -y gitk
 sudo apt-get install -y system-config-samba
 sudo apt-get install -y cutecom
@@ -232,37 +246,48 @@ sudo apt-get install -y gitlab-ci-multi-runner
 
 ## Scilab
 # http://www.scilab.org/
-# TODO
 cd $HOME/opt/src
 wget http://www.scilab.org/download/6.0.0/scilab-6.0.0.bin.linux-x86_64.tar.gz
+tar -xzvf scilab-6.0.0.bin.linux-x86_64.tar.gz
+mv scilab-6.0.0 $HOME/opt
+# TODO add scilab to $PATH env var
 
 ## Octave
 # https://www.gnu.org/software/octave/
-# TODO
+sudo apt-get install -y gfortran gperf  gnuplot  texi2html icoutils
+sudo apt-get install libclblas-bin libclblas-dev libclblas2 libopenblas-base libopenblas-dev
 cd $HOME/opt/src
 wget https://ftp.gnu.org/gnu/octave/octave-4.2.1.tar.gz
+tar -xzvf octave-4.2.1.tar.gz
+cd octave-4.2.1
+./configure && make 
+sudo make install
+rm -rf octave-4.2.1
+
 # octave forge - https://octave.sourceforge.io/
+# list of packages - https://octave.sourceforge.io/packages.php
+# FIXME error: support for URL transfers was disabled when Octave was built
 
 ## matlab
-# TODO
+# TODO buy home edition with DSP add-ons
 
 ##########################
 ## Electronic EDA tools
 ##########################
 sudo add-apt-repository --yes ppa:js-reynaud/kicad-4
 sudo apt-get update
-sudo apt-get install -y kicad geda pcb gerbv easyspice ngspice ngspice-doc gspiceui gnucap oregano
+sudo apt-get install -y kicad geda pcb gerbv easyspice ngspice ngspice-doc gspiceui gnucap oregano geda-utils geda-examples gwave kicad-locale-fr 
 
 ## LTSPICE with wine
 sudo apt-get install -y wine
 cd $HOME/opt/src
 wget http://ltspice.linear-tech.com/software/LTspiceXVII.exe
 chmod +x LTspiceXVII.exe
-sudo ./LTspiceXVII.exe
+./LTspiceXVII.exe
 
 ## gtkwave
 # http://gtkwave.sourceforge.net/
-sudo apt-get install gtkwave
+sudo apt-get install -y gtkwave
 
 ##########################
 ## AVR tools
@@ -281,7 +306,7 @@ sudo apt-get install gtkwave
 ## stm32CubeMX
 # https://my.st.com/content/my_st_com/en/products/embedded-software/mcus-embedded-software/stm32-embedded-software/stm32cube-embedded-software/stm32cubef4.license%3d1491167185534.html
 # TODO get from sftp darketik NAS
-sudo ./SetupSTM32CubeMX-4.20.0.linux
+#+ sudo ./SetupSTM32CubeMX-4.20.0.linux
 # /usr/local/STMicroelectronics/STM32Cube/STM32CubeMX/STM32CubeMX
 
 ## Gnu-gcc-arm
@@ -296,7 +321,12 @@ ln -s gcc-arm-none-eabi-5_4-2016q3 gcc-arm-none-eabi
 # https://www.arduino.cc/en/Main/Software
 cd $HOME/opt/src
 wget https://www.arduino.cc/download_handler.php?f=/arduino-1.8.2-linux64.tar.xz
-# TODO
+tar -xf arduino-1.8.2-linux64.tar.xz
+cd arduino-1.8.2
+./install.sh
+cd $HOME/opt/src
+mv arduino-1.8.2 ..
+#TODO add arduino to $PATH
 
 ## teensy
 # https://www.pjrc.com/
@@ -317,7 +347,7 @@ sudo ./TeensyduinoInstall.linux64
 ## openocd
 cd $HOME/opt/src
 wget https://downloads.sourceforge.net/project/openocd/openocd/0.10.0/openocd-0.10.0.tar.bz2
-tar xfz openocd-0.10.0.tar.gz
+tar -xjf openocd-0.10.0.tar.gz
 pushd openocd-0.10.0
 ./configure --enable-ftdi --enable-stlink
 make
@@ -328,24 +358,24 @@ rm -rf openocd-0.10.0
 ## stlink
 cd $HOME/opt/src
 wget https://github.com/texane/stlink/archive/1.3.1.tar.gz
-tar xfz 1.3.1.tar.gz
+tar -xzf 1.3.1.tar.gz
 pushd stlink-1.3.1
-./autogen.sh
-./configure
-make
-sudo make install
-sudo cp 49-stlink*.rules /etc/udev/rules.d/
+sudo apt-get install -y cmake libusb-1.0 libusb-1.0.0-dev libgtk-3-dev
+make release
+cd build/Release; sudo make install
 popd
 rm -rf stlink-1.3.1
 
 # Install stlink
 # Allow non-root users to access USB devices such as Atmel AVR and Olimex
 # programmers, FTDI dongles...
+sudo su
 echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="15ba", ATTRS{idProduct}=="0003", GROUP="users", MODE="0666"' >> /etc/udev/rules.d/60-programmers.rules
 echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="15ba", ATTRS{idProduct}=="002a", GROUP="users", MODE="0666"' >> /etc/udev/rules.d/60-programmers.rules
 echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="15ba", ATTRS{idProduct}=="002b", GROUP="users", MODE="0666"' >> /etc/udev/rules.d/60-programmers.rules
 echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2104", GROUP="users", MODE="0666"' >> /etc/udev/rules.d/60-programmers.rules
 echo 'SUBSYSTEMS=="usb", KERNEL=="ttyUSB*", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", GROUP="users", MODE="0666", SYMLINK+="ftdi-usbserial"' >> /etc/udev/rules.d/60-programmers.rules
+exit
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 
@@ -353,6 +383,8 @@ sudo udevadm trigger
 ##########################
 ## Xilinx Vivado 
 ##########################
+# to fix an issue in DocNav
+sudo apt-get install libglib2.0-0:i386
 # TODO get from sftp darketik NAS
 
 ##########################
