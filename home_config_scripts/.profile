@@ -21,8 +21,9 @@ if [ -d "$HOME/opt/bin" ] ; then
     PATH="$HOME/opt/bin:$PATH"
     PATH="$HOME/opt/bin/gcc-arm-none-eabi/bin:$PATH"
     PATH="$HOME/opt/bin/eclipse:$PATH"
+    PATH="$HOME/opt/arduino-1.8.2:$PATH"
+    PATH="$HOME/opt/scilab-6.0.0/bin:$PATH"
  #   PATH="$HOME/opt/bin/thunderbird:$PATH"
- #   PATH="$HOME/opt/bin/scilab-5.5.0/bin:$PATH"
  #   PATH="$HOME/opt/bin/arduino-0100-Z:$PATH" # zpuino official ide
  #   PATH="$HOME/opt/bin/papilio-zap-ide:$PATH" # zpuino for papilio ide
  #   PATH="$HOME/opt/bin/zpu-toolchain-linux-1.0/bin:$PATH"
