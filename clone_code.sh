@@ -123,6 +123,19 @@ popd
 
 popd
 
+pushd $HOME/work
+## gwt GAP 
+git clone git@iis-git.ee.ethz.ch:greenwaves-technologies/GAP.git gap8
+pushd gap8
+make update-all
+popd
+
+## fpga training
+# TODO
+
+popd
+
+
 ## gnupg keys
 # TODO
 ## ssh keys
