@@ -1,0 +1,46 @@
+# ----- REMOVE LINES ABOVE HERE --------------------------
+#
+# This license is valid from Wed Apr 12 04:58:31 UTC 2017.
+#
+# This is license NODELOCKED to HOSTID=64006a803ead;
+# there is no need to run lmgrd for this license.
+#
+#
+# This is a permanent license generated on Wed Apr 12 04:58:31 UTC 2017
+INCREMENT SDK xilinxd 2018.04 permanent uncounted C9AEFE141779 \
+VENDOR_STRING=florent-gwt,SDK,software,permanent,_211285950_1777522213_0_524 \
+HOSTID=ANY ISSUER="Xilinx Inc" START=12-Apr-2017 TS_OK
+#
+# This is a permanent license generated on Wed Apr 12 04:58:31 UTC 2017
+INCREMENT Analyzer xilinxd 2018.04 permanent uncounted 56F33951C209 \
+VENDOR_STRING=florent-gwt,Analyzer,software,permanent,_211285950_1777522213_0_326 \
+HOSTID=ANY ISSUER="Xilinx Inc" START=12-Apr-2017 TS_OK
+#
+# This is a permanent license generated on Wed Apr 12 04:58:31 UTC 2017
+INCREMENT HLS xilinxd 2018.04 permanent uncounted 3EEAE1E2C263 \
+VENDOR_STRING=florent-gwt,HLS,software,permanent,_211285950_1777522213_0_801 \
+HOSTID=ANY ISSUER="Xilinx Inc" START=12-Apr-2017 TS_OK
+#
+# This is a permanent license generated on Wed Apr 12 04:58:31 UTC 2017
+INCREMENT V_WebPACK xilinxd 2018.04 permanent uncounted 39645A184CF2 \
+VENDOR_STRING=florent-gwt,V_WebPACK,software,permanent,_211285950_1777522213_0_746 \
+HOSTID=ANY ISSUER="Xilinx Inc" START=12-Apr-2017 TS_OK
+#
+#  This license is valid for evaluation ( 365 days ) from Wed Apr 12 04:58:31 UTC 2017
+INCREMENT PetaLinux_NoSuport_Eval xilinxd 2018.04 13-apr-2018 \
+uncounted E7CE797FBFA7 \
+VENDOR_STRING=florent-gwt,PetaLinux_NoSuport_Eval,software,evaluation,_211285950_1777522213_0_346 \
+HOSTID=64006a803ead ISSUER="Xilinx Inc" START=12-Apr-2017 \
+TS_OK
+#
+#
+# ----------------------------------------------------------------------
+#  The following PACKAGE definition is a REQUIRED part of this license:
+#
+PACKAGE PetaLinux_NoSuport_Eval xilinxd 2018.04 D8C1B2AA4792 \
+COMPONENTS="petalinux_arch_microblaze petalinux_arch_ppc \
+petalinux_arch_zynq" OPTIONS=SUITE
+#
+# ------------------------------------------------------------------------------
+#
+# ----- REMOVE LINES BELOW HERE --------------------------

@@ -1,0 +1,25 @@
+# ----- REMOVE LINES ABOVE HERE --------------------------
+#
+# This license is valid from Wed Apr 12 05:00:20 UTC 2017.
+#
+# This is license NODELOCKED to HOSTID=ANY;
+# there is no need to run lmgrd for this license.
+#
+#
+# This is a permanent license generated on Wed Apr 12 05:00:20 UTC 2017
+INCREMENT ISE_WebPACK xilinxd 2018.04 permanent uncounted \
+137843E68944 \
+VENDOR_STRING=florent-gwt,ISE_WebPACK,software,permanent,_211285950_1777522213_0_735 \
+HOSTID=ANY ISSUER="Xilinx Inc" START=12-Apr-2017 TS_OK
+#
+#
+# ----------------------------------------------------------------------
+#  The following PACKAGE definition is a REQUIRED part of this license:
+#
+PACKAGE ISE_WebPACK xilinxd 2018.04 188268F149C1 COMPONENTS="SDK \
+ChipScopePro_SIOTK ChipscopePro WebPACK XC7Z010 XC7Z030 HLS \
+xps_tdp XC7Z020 PlanAhead" OPTIONS=SUITE
+#
+# ------------------------------------------------------------------------------
+#
+# ----- REMOVE LINES BELOW HERE --------------------------
