@@ -191,6 +191,19 @@ rm -rf miniAudicle-1.3.5.2
 ## Gnaural - binaural audio generation
 # TODO
 
+# axoloti gui patcher
+sudo apt-get install -y lib32z1 lib32ncurses5 lib32z1-dev
+pushd $HOME/opt/src
+wget https://github.com/axoloti/axoloti/releases/download/1.0.12-1/axo_runtime_linux_1.0.12-1.tgz
+mv axo_runtime_linux_1.0.12-1.tgz $(HOME)
+pushd $HOME
+tar -xzvf axo_runtime_linux_1.0.12-1.tgz
+popd
+wget https://github.com/axoloti/axoloti/releases/download/1.0.12-1/axoloti-linux-1.0.12-1.deb
+sudo dpkg -i axoloti-linux-1.0.12-1.deb
+sudo $HOME/axoloti_runtime/platform_linux/add_udev_rules.sh
+
+
 ##########################
 ## Misc
 ##########################

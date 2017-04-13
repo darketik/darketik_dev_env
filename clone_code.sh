@@ -88,8 +88,6 @@ git clone https://github.com/SonicPotions/LXR.git LXR
 git clone https://github.com/axoloti/axoloti.git axoloti
 git clone https://github.com/axoloti/axoloti-contrib.git axoloti-contrib
 git clone https://github.com/axoloti/axoloti-factory.git axoloti-factory
-# TODO install gui patcher
-
 #   teensy audio library - 
 git clone https://github.com/PaulStoffregen/Audio.git teensy_audio_library
 # TODO
