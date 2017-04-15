@@ -267,19 +267,22 @@ mv scilab-6.0.0 $HOME/opt
 
 ## Octave
 # https://www.gnu.org/software/octave/
-sudo apt-get install -y gfortran gperf  gnuplot  texi2html icoutils
-sudo apt-get install libclblas-bin libclblas-dev libclblas2 libopenblas-base libopenblas-dev
-cd $HOME/opt/src
-wget https://ftp.gnu.org/gnu/octave/octave-4.2.1.tar.gz
-tar -xzvf octave-4.2.1.tar.gz
-cd octave-4.2.1
-./configure && make 
-sudo make install
-rm -rf octave-4.2.1
-
+sudo apt-get install -y gcc g++ gfortran make libblas-dev liblapack-dev libpcre3-dev libarpack2-dev libcurl4-gnutls-dev epstool libfftw3-dev transfig libfltk1.3-dev libfontconfig1-dev libfreetype6-dev libgl2ps-dev libglpk-dev libreadline-dev gnuplot-x11 libgraphicsmagick++1-dev libhdf5-serial-dev openjdk-8-jdk libsndfile1-dev llvm-dev lpr texinfo libgl1-mesa-dev libosmesa6-dev pstoedit portaudio19-dev libqhull-dev libqrupdate-dev libqscintilla2-dev libqt4-dev libqtcore4 libqtwebkit4 libqt4-network libqtgui4 libqt4-opengl-dev libsuitesparse-dev texlive libxft-dev zlib1g-dev autoconf automake bison flex gperf gzip icoutils librsvg2-bin libtool perl rsync tar
+#+ cd $HOME/opt/src
+#+ wget https://ftp.gnu.org/gnu/octave/octave-4.2.1.tar.gz
+#+ tar -xzvf octave-4.2.1.tar.gz
+#+ cd octave-4.2.1
+#+ ./configure && make 
+#+ sudo make install
+#+ rm -rf octave-4.2.1
 # octave forge - https://octave.sourceforge.io/
 # list of packages - https://octave.sourceforge.io/packages.php
 # FIXME error: support for URL transfers was disabled when Octave was built
+#+ pkg install -forge control
+#+ pkg install -forge signal
+#+ pkg install -forge general
+#+ pkg install -forge communications
+sudo apt-get install -y octave octave-communications octave-doc octave-general octave-htmldoc octave-image octave-info octave-io octave-missing-functions octave-signal octave-sockets octave-strings octave-tsa 
 
 ## matlab
 # TODO buy home edition with DSP add-ons

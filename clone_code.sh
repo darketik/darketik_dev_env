@@ -130,7 +130,7 @@ pushd gap8
 make update-all
 popd
 
-## fpga training
+## fpga training: zynqbook, z-turn myir board, bookshelf yao training
 # TODO
 
 popd
