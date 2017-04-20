@@ -239,6 +239,9 @@ cd $HOME/opt/src
 wget https://github.com/atom/atom/releases/download/v1.15.0/atom-amd64.deb 
 sudo dpkg -i atom-amd64.deb
 
+## cutecom terminal
+sudo apt-get install -y cutecom
+
 ##########################
 ## Python
 ##########################
