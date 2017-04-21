@@ -113,6 +113,18 @@ if ! shopt -oq posix; then
   fi
 fi
 
+######################################################
+#                Personal configuration              #
+######################################################
+
+# Git Aware Prompt
+export GITAWAREPROMPT=~/.bash/git-aware-prompt
+source "${GITAWAREPROMPT}/main.sh"
+
+# standard
+export PS1="\${debian_chroot:+(\$debian_chroot)}\u@\h:\w \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+
+
 export LM_LICENSE_FILE=1717@gwt-Precision-Tower-3620:99988@gwt-Precision-Tower-3620
 
 if [ -f ~/smartdv.bashrc ]; then
