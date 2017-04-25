@@ -408,6 +408,23 @@ sudo apt-get install libglib2.0-0:i386
 ## For SDK gui open bug:
 cat "export SWT_GTK3=0" > /opt/Xilinx_WebPACK/SDK/2016.4/.settings64-Software_Development_Kit__SDK_.sh
 
+## Fix ERROR: [#UNDEF] conversion to double from string is failed unexpected "," outside function argument list in expression "1000 / 10,000"
+# add below lines in  /opt/Xilinx_2015.1/Vivado/2015.1/bin/setupEnv.sh 
+#+ export LC_CTYPE="en_US.UTF-8" 
+#+ export LC_NUMERIC="en_US.UTF-8"
+
+#+ LC_TIME="en_US.UTF-8" 
+#+ LC_COLLATE="en_US.UTF-8" 
+#+ LC_MONETARY="en_US.UTF-8" 
+#+ LC_MESSAGES="en_US.UTF-8" 
+#+ LC_PAPER="en_US.UTF-8" 
+#+ LC_NAME="en_US.UTF-8" 
+#+ LC_ADDRESS="en_US.UTF-8" 
+#+ LC_TELEPHONE="en_US.UTF-8" 
+#+ LC_MEASUREMENT="en_US.UTF-8" 
+#+ LC_IDENTIFICATION="en_US.UTF-8" 
+#+ LC_ALL=en_US.UTF-8
+
 ## Platform Cable USB II install on ubuntu
 sudo /opt/Xilinx_WebPACK/Vivado/2016.4/data/xicom/cable_drivers/lin64/install_script/install_drivers/install_drivers
 cd /etc/udev/rules.d/
