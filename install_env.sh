@@ -439,6 +439,17 @@ cat "# version 0003
 	SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="03fd", ATTRS{idProduct}=="0015", RUN+="/sbin/fxload -v -t fx2 -I /opt/Xilinx_WebPACK/Vivado/2016.4/data/xicom/xusb_xse.hex -D $tempnode"" > xusbdfwu.rules
 sudo udevadm control --reload-rules
 
+# COEgen binary to COE files for Vivado BRAM preloading
+# get *.deb from here: https://wornwinter.wordpress.com/2015/02/07/coegen-v0-01-generate-coe-files-from-binary-files-for-xilinx-fpga-block-ram/
+sudo apt-get install -y xsltproc docbook-xsl docbook-xml
+sudo apt-get install -y build-essential g++ python-dev autotools-dev libicu-dev build-essential libbz2-dev
+wget http://downloads.sourceforge.net/project/boost/boost/1.57.0/boost_1_57_0.tar.bz2
+tar xvjf ./boost_1_57_0.tar.bz2
+cd boost_1_57_0
+./bootstrap.sh --prefix=/opt/boost_1_57_0
+./b2
+sudo ./b2 install
+
 ##########################
 ## flexlm license server deamon startup
 ##Lmgrd license service 
@@ -454,4 +465,3 @@ sudo udevadm control --reload-rules
 
 # VIP SMartDV
 # TODO get from sftp darketik NAS
-
