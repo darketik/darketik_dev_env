@@ -249,6 +249,7 @@ sudo apt-get install -y python2.7 python-numpy python-scipy python-matplotlib
 sudo apt-get install -y python3-pip
 sudo easy_install3 artifactory jenkinsapi sqlalchemy prettytable
 sudo pip3 install pyelftools
+sudo easy_install3 twisted 
 
 ##########################
 ## Jenkins tomcat7 method with war file
