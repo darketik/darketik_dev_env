@@ -257,6 +257,8 @@ sudo apt-get install -y python3-pip
 sudo easy_install3 artifactory jenkinsapi sqlalchemy prettytable
 sudo pip3 install pyelftools
 sudo easy_install3 twisted 
+sudo pip3 install openpyxl
+sudo pip3 install xlsxwriter
 
 ##########################
 ## Jenkins tomcat7 method with war file
