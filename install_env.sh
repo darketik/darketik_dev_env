@@ -68,6 +68,9 @@ sudo apt-get install -y enpass
 ##########################
 # TODO
 ##sudo update-rc.d vncserver-x11-serviced defaults
+#Modif xstartup in .vnc home folder 
+#Open 590<display port> port on router for external access 
+#vncserver -geometry 1920x1080 :2 
 
 ##########################
 ## libreoffice repo
@@ -259,6 +262,7 @@ sudo pip3 install pyelftools
 sudo easy_install3 twisted 
 sudo pip3 install openpyxl
 sudo pip3 install xlsxwriter
+sudo pip3 install sphinx
 
 ##########################
 ## Jenkins tomcat7 method with war file
