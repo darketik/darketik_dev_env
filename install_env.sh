@@ -226,6 +226,7 @@ sudo apt-get install -y system-config-samba
 sudo apt-get install -y cutecom
 sudo apt-get install -y nmap
 sudo apt-get install -y subversion
+sudo apt-get install xvfb chrpath socat autoconf gcc-multilib
 
 ## basic dev tools
 sudo dpkg --add-architecture i386
