@@ -46,6 +46,15 @@ sudo dpkg -i synology-cloud-station-3501.x86_64.deb
 # TODO
 
 ##########################
+## owncloud client 
+##########################
+## Owncloud client - ubuntu 14.04
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Ubuntu_14.04/ /' > /etc/apt/sources.list.d/owncloud-client.list"
+sudo apt-get update
+sudo apt-get install owncloud-client
+
+
+##########################
 ## spotify family
 ##########################
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
