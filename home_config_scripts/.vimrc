@@ -1,23 +1,6 @@
 "-----------------
 " Option general -
 "-----------------
-set nocompatible              " be iMproved, required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-call vundle#end()            " required
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
 
 set ttytype=xterm
 
@@ -254,21 +237,34 @@ function ToggleHex()
 endfunction
 
 " :ab 
-:ab be beginendO
+:ab be begin
+endO
 :ab Re Ready
-:ab fo forkjoinO
+:ab fo fork
+joinO
 :ab di $display("%");F%s:call getchar()
 :ab .B .BeginRead(%);F%s:call getchar()
 :ab .W .Write(%);F%s:call getchar()
 :ab .E .EndRead();
-:imap  yyp:s/BeginRead(.*);/EndRead();/ O
-:ab al alwaysbegin endk$i
+:imap  yyp:s/BeginRead(.*);/EndRead();/
+ O
+:ab al always
+begin 
+endk$i
 :ab push push_channel_% F%s:call getchar()
 :ab pull pull_channel_% F%s:call getchar()
-:ab mod module  ();endmodule2kO
-" :ab ca case (%)endcase3k^[F%s:call getchar()
+:ab mod module  (
+);
 
-:map  :'<,'>s/.*\.\(in\\|out\) /\t\./ :'<,'>s/,/(),/ :'<,'>s/module\s\(.*\)\s/\1 U_\1 (/g
+endmodule2kO
+" :ab ca case (%)
+
+endcase3k
+^[F%s:call getchar()
+
+:map  :'<,'>s/.*\.\(in\\|out\) /\t\./
+ :'<,'>s/,/(),/
+ :'<,'>s/module\s\(.*\)\s/\1 U_\1 (/g
 
 function! GnuIndent()
   setlocal formatoptions=croql cindent
