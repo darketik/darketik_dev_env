@@ -25,16 +25,19 @@ pushd $HOME/opt/dev_env_scripts/home_config_scripts
 install -v -D .asoundrc $HOME
 install -v -D .bash_aliases $HOME
 install -v -D .bachrc $HOME
+install -v -D .bash $HOME
 install -v -D .emacs $HOME
 install -v -D .gitconfig $HOME
 install -v -D .gitignore $HOME
 install -v -D .mailrc $HOME
 install -v -D mentor.bashrc $HOME
+install -v -D eagle.bashrc $HOME
 install -v -D .profile $HOME
 install -v -D smartdv.bashrc $HOME
 install -v -D .vim $HOME
 install -v -D .vimrc $HOME
-install -v -D xilinx.bashrc $HOME
+install -v -D xilinx* $HOME
+install -v -D peta* $HOME
 popd
 
 ## $HOME/opt scripts

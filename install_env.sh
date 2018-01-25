@@ -3,7 +3,7 @@
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-locale-gen en_US.UTF-8
+sudo locale-gen en_US.UTF-8
 sudo dpkg-reconfigure locales
 
 cd $HOME
@@ -220,7 +220,7 @@ sudo $HOME/axoloti_runtime/platform_linux/add_udev_rules.sh
 ## Misc
 ##########################
 sudo apt-get install -y vim vim-gnome vim-scripts exuberant-ctags gnupg2 openssh-server
-sudo apt-get install -y git g++ python3-setuptools swig3.0 python3-dev libjpeg-dev libz-dev cmake lib32z1 lib32ncurses5 ant openjdk-7-jdk
+sudo apt-get install -y git g++ python3-setuptools swig3.0 python3-dev libjpeg-dev libz-dev cmake lib32z1 lib32ncurses5 ant openjdk-8-jdk
 sudo apt-get install -y csh
 sudo apt-get install -y python-yaml
 sudo apt-get install -y tcsh
@@ -235,7 +235,9 @@ sudo apt-get install -y system-config-samba
 sudo apt-get install -y cutecom
 sudo apt-get install -y nmap
 sudo apt-get install -y subversion
-sudo apt-get install xvfb chrpath socat autoconf gcc-multilib
+sudo apt-get install -y xvfb chrpath socat autoconf gcc-multilib
+sudo apt-get install -y gcc g++ gfortran make libblas-dev liblapack-dev libpcre3-dev libarpack2-dev libcurl4-gnutls-dev epstool libfftw3-dev transfig libfltk1.3-dev libfontconfig1-dev libfreetype6-dev libgl2ps-dev libglpk-dev libreadline-dev gnuplot-x11 libgraphicsmagick++1-dev libhdf5-serial-dev openjdk-7-jdk libsndfile1-dev llvm-dev lpr texinfo libgl1-mesa-dev libosmesa6-dev pstoedit portaudio19-dev libqhull-dev libqrupdate-dev libqscintilla2-dev libqt4-dev libqtcore4 libqtwebkit4 libqt4-network libqtgui4 libqt4-opengl-dev libsuitesparse-dev texlive libxft-dev zlib1g-dev autoconf automake bison flex gperf gzip icoutils librsvg2-bin libtool perl rsync tar
+sudo apt-get install -y autoconf automake autotools-dev curl device-tree-compiler libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev
 
 ## basic dev tools
 sudo dpkg --add-architecture i386
@@ -244,8 +246,8 @@ sudo apt-get install -y build-essential autotools-dev autoconf pkg-config libusb
 sudo locale-gen UTF-8
 
 ## lua
-sudo apt-get install -y lua5.1
-sudo apt-get install -y liblua5.1-0-dev
+sudo apt-get install -y lua5.3.0
+sudo apt-get install -y liblua5.3-dev
 
 ## atom editor
 cd $HOME/opt/src
@@ -257,7 +259,7 @@ wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add
 sudo apt-get install apt-transport-https
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt-get update
-sudo apt-get install sublime-text
+sudo apt-get install -y sublime-text
 
 ## cutecom terminal
 sudo apt-get install -y cutecom
@@ -294,7 +296,10 @@ mv scilab-6.0.0 $HOME/opt
 
 ## Octave
 # https://www.gnu.org/software/octave/
-sudo apt-get install -y gcc g++ gfortran make libblas-dev liblapack-dev libpcre3-dev libarpack2-dev libcurl4-gnutls-dev epstool libfftw3-dev transfig libfltk1.3-dev libfontconfig1-dev libfreetype6-dev libgl2ps-dev libglpk-dev libreadline-dev gnuplot-x11 libgraphicsmagick++1-dev libhdf5-serial-dev openjdk-8-jdk libsndfile1-dev llvm-dev lpr texinfo libgl1-mesa-dev libosmesa6-dev pstoedit portaudio19-dev libqhull-dev libqrupdate-dev libqscintilla2-dev libqt4-dev libqtcore4 libqtwebkit4 libqt4-network libqtgui4 libqt4-opengl-dev libsuitesparse-dev texlive libxft-dev zlib1g-dev autoconf automake bison flex gperf gzip icoutils librsvg2-bin libtool perl rsync tar
+sudo add-apt-repository ppa:octave/stable
+sudo apt-get update
+sudo apt-get install -y octave
+
 #+ cd $HOME/opt/src
 #+ wget https://ftp.gnu.org/gnu/octave/octave-4.2.1.tar.gz
 #+ tar -xzvf octave-4.2.1.tar.gz
@@ -489,3 +494,4 @@ sudo ./b2 install
 
 # VIP SMartDV
 # TODO get from sftp darketik NAS
+
