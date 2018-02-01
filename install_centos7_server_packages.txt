@@ -1,0 +1,20 @@
+sudo yum install thunderbird.x86_64
+sudo yum install xterm
+
+sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+sudo yum-config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+sudo yum install sublime-text
+
+## realvnc 
+sudo rpm -Uvh VNC-Server-6.2.1-Linux-x64.rpm 
+
+## realvnc xorg support on centos  
+#  https://support.realvnc.com/Knowledgebase/Article/View/546
+sudo yum install xorg-x11-drv-dummy
+sudo vncinitconfig -enable-system-xorg
+
+## cadence EDA tools
+
+sudo yum install libXp.so.6
+sudo rpm -Uvh compat-libtermcap-2.0.8-49.el6.x86_64.rpm
+sudo yum install libXScrnSaver-1.2.2-6.1.el7.i686 libXScrnSaver-1.2.2-6.1.el7.x86_64
