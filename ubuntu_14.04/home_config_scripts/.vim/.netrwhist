@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/florent/work/gap8/gap8_src/pulp_pipeline/tests/pulp_tests/fcHello/build'
+let g:netrw_dirhist_2='/home/florent/work/gap8/gap8_src/pulp_pipeline/tests/pulp_tests/fcHello/junit-reports'
+let g:netrw_dirhist_3='/home/florent/work/gap8/gap8_src/pulp_pipeline/tests/zc706_tests/uart_via_ps/build'
+let g:netrw_dirhist_4='/home/florent/work/gap8/gap8_src/pulp_pipeline/runtime/hal/include/hal'
+let g:netrw_dirhist_5='/home/florent/work/gap8/gap8_src/pulp_pipeline/tests/zc706_tests/uart_rtl_lib'
+let g:netrw_dirhist_6='/home/florent/work/gap8/gap8_src/pulp_pipeline/tests/runtime_tests/gap/udma/HYPER_RAM'
+let g:netrw_dirhist_7='/home/florent/work/gap8/gap8_src/mbed_os/source'

@@ -1,0 +1,11 @@
+[user]
+	email = florent.rotenberg@greenwaves-technologies.com
+	name = Florent Rotenberg
+[push]
+	default = simple
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+	d = difftool

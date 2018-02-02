@@ -13,8 +13,11 @@ sudo rpm -Uvh VNC-Server-6.2.1-Linux-x64.rpm
 sudo yum install xorg-x11-drv-dummy
 sudo vncinitconfig -enable-system-xorg
 
-## cadence EDA tools
-
+## cadence EDA tools fixes for centos 7
 sudo yum install libXp.so.6
 sudo rpm -Uvh compat-libtermcap-2.0.8-49.el6.x86_64.rpm
 sudo yum install libXScrnSaver-1.2.2-6.1.el7.i686 libXScrnSaver-1.2.2-6.1.el7.x86_64
+
+sudo chmod +x /etc/rc.d/rc.local
+sudo cat "source /opt/flexlm.sh" > /etc/rc.d/rc.local
+

@@ -1,0 +1,9 @@
+.metadata
+*~
+target/
+*.pyc
+*.o
+
+*.pdf
+*.log
+*.aux
