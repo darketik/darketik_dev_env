@@ -21,3 +21,26 @@ sudo yum install libXScrnSaver-1.2.2-6.1.el7.i686 libXScrnSaver-1.2.2-6.1.el7.x8
 sudo chmod +x /etc/rc.d/rc.local
 sudo cat "source /opt/flexlm.sh" > /etc/rc.d/rc.local
 
+## packages install
+sudo yum install -y git g++ python3-setuptools swig3.0 python3-dev libjpeg-dev libz-dev cmake lib32z1 lib32ncurses5 ant openjdk-8-jdk
+sudo yum install -y python-yaml
+sudo yum install -y gitk
+sudo yum install -y nmap
+sudo yum install -y numpy.x86_64 scipy.x86_64 python-matplotlib.x86_64 python-matplotlib-doc.x86_64 
+
+
+sudo yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+sudo yum -y install python36u
+sudo yum -y install python36u-pip
+sudo yum install -y python36u-devel
+sudo easy_install-3.6 artifactory jenkinsapi sqlalchemy prettytable
+sudo pip3.6 install pyelftools
+sudo easy_install-3.6 twisted 
+sudo pip3.6 install openpyxl
+sudo pip3.6 install xlsxwriter
+sudo pip3.6 install sphinx
+
+sudo yum install -y libXrender-0.9.10-1.el7.i686 libXrender-0.9.10-1.el7.x86_64
+sudo yum install -y libXtst-1.2.3-1.el7.i686 libXtst-1.2.3-1.el7.x86_64
+
+
