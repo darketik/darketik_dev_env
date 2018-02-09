@@ -1,9 +1,11 @@
 sudo yum install thunderbird.x86_64
 sudo yum install xterm
 
+## sublime
 sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
 sudo yum-config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
 sudo yum install sublime-text
+
 
 ## realvnc 
 sudo rpm -Uvh VNC-Server-6.2.1-Linux-x64.rpm 
@@ -29,21 +31,34 @@ sudo yum install -y nmap
 sudo yum install -y numpy.x86_64 scipy.x86_64 python-matplotlib.x86_64 python-matplotlib-doc.x86_64 
 
 sudo yum -y install https://centos7.iuscommunity.org/ius-release.rpm
-sudo yum -y install python36u
-sudo yum -y install python36u-pip
-sudo yum install -y python36u-devel
-sudo easy_install-3.6 artifactory jenkinsapi sqlalchemy prettytable
-sudo pip3.6 install pyelftools
-sudo easy_install-3.6 twisted 
-sudo pip3.6 install openpyxl
-sudo pip3.6 install xlsxwriter
-sudo pip3.6 install sphinx
-sudo yum install -y perl-Switch.noarch
+sudo yum -y install python36u python36u-pip python36u-devel perl-Switch.noarch
+sudo easy_install-3.6 artifactory jenkinsapi sqlalchemy prettytable twisted
+sudo pip3.6 install pyelftools openpyxl  xlsxwriter sphinx pexpect
+
+## si il y a un conflit entre plusieurs version de python:
+# sudo ln -s python3.6 python3
+# sudo ln -s python3.6-config python3-config
+
 
 sudo yum install -y libXrender-0.9.10-1.el7.i686 libXrender-0.9.10-1.el7.x86_64
 sudo yum install -y libXtst-1.2.3-1.el7.i686 libXtst-1.2.3-1.el7.x86_64
 sudo yum install -y libSM-1.2.2-2.el7.i686 libSM-1.2.2-2.el7.x86_64
-
 sudo yum install -y redhat-lsb-core-4.1-27.el7.centos.1.x86_64
-
 sudo yum install -y bash-completion bash-completion-extras
+
+Install swig3. First get it from there and untar it:
+http://www.swig.org/download.html
+Then execute: ::
+
+  $ ./configure --without-pcre
+  $ make
+  $ sudo make install
+
+
+###########################################
+##install by germain to get python-config cmd
+############################################
+sudo yum install -y python34-devel-3.4.5-5.el7.x86_64 python34-pip-8.1.2-5.el7.noarch
+sudo yum install -y python34 python34-setuptools.noarch redhat-lsb-core wget texinfo python34-devel libjpeg-turbo-devel.x86_64 ant
+sudo easy_install-3.4 artifactory jenkinsapi sqlalchemy prettytable sphinx pyelftools pexpect twisted
+sudo pip3.4 install pyelftools openpyxl  xlsxwriter sphinx pexpect
