@@ -1,5 +1,7 @@
 sudo yum install thunderbird.x86_64
 sudo yum install xterm
+sudo yum install ntfs-3g
+
 
 ## sublime
 sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
