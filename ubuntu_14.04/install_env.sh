@@ -508,3 +508,12 @@ sudo ./b2 install
 # VIP SMartDV
 # TODO get from sftp darketik NAS
 
+
+##### install gapuino ft2232d
+# if ttyUSBx are in dialout group, add users to this group
+sudo usermod -a -G dialout <username>
+# create udev rule for gapuino ftdi2232 usb chip
+cd /etc/udev/rules.d/
+sudo touch 90-ftdi_gapuino.rules
+cat 'ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6010", MODE="0666", GROUP="dialout"'> 90-ftdi_gapuino.rules.rules
+sudo udevadm control --reload-rules && sudo udevadm trigger
