@@ -35,10 +35,6 @@ if [ -d "/opt/Xilinx/DocNav" ] ; then
 fi
 
 
-eval "$(ssh-agent -s)"
-ssh-add $HOME/.ssh/id_rsa
-
-
 
 
 

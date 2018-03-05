@@ -240,6 +240,8 @@ sudo apt-get install -y gcc g++ gfortran make libblas-dev liblapack-dev libpcre3
 sudo apt-get install -y autoconf automake autotools-dev curl device-tree-compiler libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev
 sudo apt-get install -y doxygen
 sudo apt-get install -y graphicsmagick-libmagick-dev-compat
+sudo apt-get install -y libftdi-dev  libftdi1
+sudo ln -s /usr/bin/libftdi-config /usr/bin/libftdi1-config
 
 
 ## nfs server 
