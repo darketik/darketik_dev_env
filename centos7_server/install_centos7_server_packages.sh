@@ -32,6 +32,8 @@ sudo yum install -y gitk
 sudo yum install -y nmap
 sudo yum install -y numpy.x86_64 scipy.x86_64 python-matplotlib.x86_64 python-matplotlib-doc.x86_64 
 sudo yum install -y libftdi-devel-1.1-4.el7.x86_64
+sudo yum install -y libmng-1.0.10-14.el7.x86_64
+
 
 sudo yum -y install https://centos7.iuscommunity.org/ius-release.rpm
 sudo yum -y install python36u python36u-pip python36u-devel perl-Switch.noarch
@@ -74,3 +76,11 @@ cd /etc/udev/rules.d/
 sudo touch 90-ftdi_gapuino.rules
 cat 'ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6010", MODE="0666", GROUP="dialout"'> 90-ftdi_gapuino.rules.rules
 sudo udevadm control --reload-rules && sudo udevadm trigger
+
+
+## install new hdd dissk on disk volume 
+# http://xmodulo.com/manage-lvm-volumes-centos-rhel-7-system-storage-manager.html
+sudo yum install -y system-storage-manager 
+sudo ssm list 
+# sudo ssm add -p <pool-name> <device> 
+# sudo ssm resize -s [size (+100%FREE)] [volume] 
