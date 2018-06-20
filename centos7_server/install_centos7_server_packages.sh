@@ -60,6 +60,25 @@ Then execute: ::
   $ sudo make install
 
 
+## maria db 10.3
+# add repo
+# # MariaDB 10.3 CentOS repository list - created 2018-06-20 09:34 UTC
+# http://downloads.mariadb.org/mariadb/repositories/
+# [mariadb]
+# name = MariaDB
+# baseurl = http://yum.mariadb.org/10.3/centos7-amd64
+# gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+# gpgcheck=1
+sudo yum install MariaDB-server MariaDB-client
+
+sudo /etc/init.d/mysql start
+#OR
+# systemctl enable mysql.service
+# systemctl start mysql.service
+
+sudo mysql_upgrade
+sudo mysql_secure_installation
+
 ###########################################
 ##install by germain to get python-config cmd
 ############################################
@@ -84,3 +103,5 @@ sudo yum install -y system-storage-manager
 sudo ssm list 
 # sudo ssm add -p <pool-name> <device> 
 # sudo ssm resize -s [size (+100%FREE)] [volume] 
+# 
+
