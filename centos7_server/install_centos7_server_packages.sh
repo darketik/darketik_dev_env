@@ -79,6 +79,8 @@ sudo /etc/init.d/mysql start
 sudo mysql_upgrade
 sudo mysql_secure_installation
 
+sudo firewall-cmd --zone=public --add-port=3306/tcp --permanent
+
 ###########################################
 ##install by germain to get python-config cmd
 ############################################
@@ -104,4 +106,6 @@ sudo ssm list
 # sudo ssm add -p <pool-name> <device> 
 # sudo ssm resize -s [size (+100%FREE)] [volume] 
 # 
+
+
 
