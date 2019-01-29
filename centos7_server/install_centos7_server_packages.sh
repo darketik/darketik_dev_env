@@ -109,3 +109,127 @@ sudo ssm list
 
 
 
+
+###########################################
+## openvpn server
+## https://tonygillilan.com/blog/install-openvpn-on-centos-7-4-with-easy-rsa-3/
+###########################################
+yum -y install epel-release
+yum -y install openvpn easy-rsa
+yum -y install nano (text editor if needed) 
+
+copy example server.conf file:
+cp /usr/share/doc/openvpn-*/sample/sample-config-files/server.conf /etc/openvpn
+make changes in the conf file
+nano /etc/openvpn/server.conf
+port xx (or whatever, default is already in conf file)
+
+uncomment:
+tls-auth ta.key 
+
+uncomment:
+topology subnet
+
+uncomment tcp, comment udp (tcp works best for me in my environments)
+
+# TCP or UDP server
+proto tcp
+;proto udp
+
+uncomment:
+push "redirect-gateway def1 bypass-dhcp"
+
+uncomment for multiple users to use same key pair, otherwise have to generate key pairs for each user
+I prefer one key pair for all users, and then use user passwords
+duplicate-cn
+
+uncomment: needed for certain windows clients
+comp-lzo 
+
+uncomment:
+user nobody
+group nobody
+
+explicit-exit-notify is only valid in UDP mode, if present with TCP profile, connection fails.
+change
+explicit-exit-notify 1
+to
+explicit-exit-notify 0
+
+add line at end to enable users pam authentication - regular users and passwords
+plugin /usr/lib64/openvpn/plugins/openvpn-plugin-auth-pam.so login
+
+Save and exit the OpenVPN server configuration file.
+
+
+Easy RSA:
+mkdir /etc/openvpn/easy-rsa
+cp -rf /usr/share/easy-rsa/3.0.3/* /etc/openvpn/easy-rsa
+cd /etc/openvpn/easy-rsa
+
+./easyrsa init-pki
+./easyrsa build-ca nopass
+hit enter
+./easyrsa gen-req server1 nopass
+hit enter
+./easyrsa gen-req client1 nopass
+hit enter
+./easyrsa sign-req client client1
+type yes
+./easyrsa sign-req server server1
+type yes
+./easyrsa gen-dh
+wait awhile
+
+go to server conf and put paths to keys etc
+nano /etc/openvpn/server.conf
+search for "ca ca.crt" to locate line
+ca /etc/openvpn/easy-rsa/pki/ca.crt
+cert /etc/openvpn/easy-rsa/pki/issued/server1.crt
+key /etc/openvpn/easy-rsa/pki/private/server1.key
+then right below that
+
+location of dh:
+dh /etc/openvpn/easy-rsa/pki/dh.pem
+save and exit the conf file
+
+nano /etc/sysctl.conf
+
+addd the following line:
+net.ipv4.ip_forward = 1
+
+systemctl restart network.service
+
+open port in firewall with the same port you chose above
+firewall-cmd --zone=myzone --permanent --add-port=1194/tcp   <==== or whatever port you setup (shows myzone, but use whatever zone you are using
+firewall-cmd --permanent --add-masquerade
+firewall-cmd --reload
+
+systemctl -f enable openvpn@server.service
+systemctl start openvpn@server.service
+
+Download the following from the server
+
+/etc/openvpn/easy-rsa/pki/ca.crt
+/etc/openvpn/easy-rsa/pki/issued/client1.crt
+/etc/openvpn/easy-rsa/pki/private/client1.key
+
+cp /usr/share/doc/openvpn-2.4.6/sample/sample-config-files/client.conf .
+
+============= start of file ========do not include this line======remove notes=====
+client
+dev tun
+proto tcp <=== change protocall?
+remote 45.79.70.57 53  <== connection info here
+port 53 <===== only add this line if other than default port of 1194
+resolv-retry infinite
+nobind
+persist-key
+persist-tun
+comp-lzo
+verb 3
+cipher AES-256-CBC
+auth-user-pass
+
+
+
