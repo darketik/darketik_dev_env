@@ -1,4 +1,16 @@
-# Install
+
+# TODO
+
+- align cshrc_tools to bashrc_tools
+- Add .conda folder into darketik linux env git repo ?
+
+# BUGS
+
+- No more man tool available in tcsh ?
+- conda force python to 3.11
+  - trying 'conda install python=3.12' to fix it
+
+# Install user linux account
 
 ## Root
 
@@ -76,6 +88,11 @@ Installation uniquement sur mon user account. (pour l'instant)
   - conda config --set solver libmamba
   - conda install -n base conda-lock=1.4
   - conda activate base
+  - conda install python=3.12
+
+- Anaconda
+  https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
+  > ./Anaconda3-2023.09-0-Linux-x86_64.sh
 
 ### Shell Csh
 
@@ -128,12 +145,4 @@ Installation uniquement sur mon user account. (pour l'instant)
 
 See file *python_requirements_local.txt* file.
 It is generated using command:
->pip3 freeze --path /isona2/rotenberg/.local/lib/python3.12/site-packages > python_requirements_local.txt
-
-## TODO
-
-- align cshrc_tools to bashrc_tools
-
-## BUGS
-
-- No more man tool available ?
+> pip3 freeze --path $HOME/.local/lib/python3.12/site-packages > python_requirements_local.txt

@@ -62,6 +62,22 @@ if [ -f ~/.bash_functions ]; then
     . ~/.bash_functions
 fi
 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('$HOME/work/opt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "$HOME/work/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/work/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="$HOME/work/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
 # Functions definitions.
 if [ -f ~/.bash_tools ]; then
     . ~/.bash_tools
@@ -78,18 +94,3 @@ source "${GITAWAREPROMPT}/main.sh"
 export PS1="$red\u$clr@$pur\h$clr:$ylw\w $cyn\$git_branch$red\$git_dirty$clr\$ "
 
 print_sysinfo
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/isona2/rotenberg/work/opt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/isona2/rotenberg/work/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/isona2/rotenberg/work/opt/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/isona2/rotenberg/work/opt/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
