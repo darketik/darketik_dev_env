@@ -1,0 +1,14 @@
+[user]
+	email = darketik@gmail.com
+	name = Darketik
+[push]
+	default = simple
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+	ll = log --graph --oneline --decorate --all
+	d = difftool
+[merge]
+	tool = meld    

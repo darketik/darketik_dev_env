@@ -1,0 +1,44 @@
+#! /bin/csh
+# vi: syntax=tcsh
+
+setenv SYSTEMC_INCLUDE $HOME/work/opt/systemc-2.3.4/include
+setenv SYSTEMC_LIBDIR $HOME/work/opt/systemc-2.3.4/lib-linux64
+setenv VERILATOR_ROOT $HOME/work/opt/verilator/verilator_src
+
+set XCELIUM_VER=229_004
+set XCELIUM_BIN="/CADENCE/XCELIUM$XCELIUM_VER/tools/bin /CADENCE/XCELIUM$XCELIUM_VER/tools/xcelium/bin"
+set XCLELIUM_LIBS=/CADENCE/XCELIUM$XCELIUM_VER/tools/lib:/CADENCE/XCELIUM$XCELIUM_VER/tools/vmgr/lib:/CADENCE/XCELIUM$XCELIUM_VER/tools/ep/lib
+
+set DEVTOOL12_BIN=/opt/rh/devtoolset-12/root/usr/bin
+set DEVTOOL12_LIB=/opt/rh/devtoolset-12/root/usr/lib64:/opt/rh/devtoolset-12/root/usr/lib:/opt/rh/devtoolset-12/root/usr/lib64/dyninst:/opt/rh/devtoolset-12/root/usr/lib/dyninst
+
+set VERIBLE_BIN=$HOME/work/opt/verible-v0.0-3416-g470e0b95/bin
+
+set VERILATOR_BIN=$HOME/work/opt/verilator/install/bin
+set VERILATOR_MAN=$HOME/work/opt/verilator/install/share/man
+
+set COREV_SDK_BIN=$HOME/work/opt/OpenHW/CORE-V-SDKv0.0.0.4/CORE-V-SDK
+
+set OPENSSL_BIN=$HOME/work/opt/openssl-1.1.1w/bin
+set OPENSSL_LIB=$HOME/work/opt/openssl-1.1.1w/lib
+set OPENSSL_MAN=$HOME/work/opt/openssl-1.1.1w/share/man
+
+#FR> my man custom help
+if (! $?MANPATH) then
+	setenv MANPATH $VERILATOR_MAN\:$OPENSSL_MAN
+else
+	setenv MANPATH $MANPATH\:$VERILATOR_MAN\:$OPENSSL_MAN
+endif
+# echo "MANPATH: $MANPATH"
+
+# FR> Add bin path where python packages are installed
+set path = ($DEVTOOL12_BIN $OPENSSL_BIN $path $HOME/.local/bin $VERIBLE_BIN $VERILATOR_BIN $XCELIUM_BIN $COREV_SDK_BIN)
+# echo "PATH: $path"
+
+# FR> my shared library path
+if (! $?LD_LIBRARY_PATH) then
+	setenv LD_LIBRARY_PATH $OPENSSL_LIB\:$DEVTOOL12_LIB\:$SYSTEMC_LIBDIR\:$XCLELIUM_LIBS
+else
+	setenv LD_LIBRARY_PATH $OPENSSL_LIB\:$DEVTOOL12_LIB\:$LD_LIBRARY_PATH\:$SYSTEMC_LIBDIR\:$XCLELIUM_LIBS
+endif
+# echo "LD_LIBRARY_PATH: $LD_LIBRARY_PATH"

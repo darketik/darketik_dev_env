@@ -1,0 +1,74 @@
+#! /bin/bash
+# vi: syntax=bash
+
+export SYSTEMC_INCLUDE=$HOME/work/opt/systemc-2.3.4/include
+export SYSTEMC_LIBDIR=$HOME/work/opt/systemc-2.3.4/lib-linux64
+export VERILATOR_ROOT=$HOME/work/opt/verilator/verilator_src
+
+XCELIUM_VER=229_004
+XCELIUM_BIN="/CADENCE/XCELIUM$XCELIUM_VER/tools/bin /CADENCE/XCELIUM$XCELIUM_VER/tools/xcelium/bin"
+XCLELIUM_LIBS=/CADENCE/XCELIUM$XCELIUM_VER/tools/lib:/CADENCE/XCELIUM$XCELIUM_VER/tools/vmgr/lib:/CADENCE/XCELIUM$XCELIUM_VER/tools/ep/lib
+
+DEVTOOL12_BIN=/opt/rh/devtoolset-12/root/usr/bin
+DEVTOOL12_LIB=/opt/rh/devtoolset-12/root/usr/lib64:/opt/rh/devtoolset-12/root/usr/lib:/opt/rh/devtoolset-12/root/usr/lib64/dyninst:/opt/rh/devtoolset-12/root/usr/lib/dyninst
+
+VERIBLE_BIN=$HOME/work/opt/verible-v0.0-3416-g470e0b95/bin
+
+VERILATOR_BIN=$HOME/work/opt/verilator/install/bin
+VERILATOR_MAN=$HOME/work/opt/verilator/install/share/man
+
+COREV_SDK_BIN=$HOME/work/opt/OpenHW/CORE-V-SDKv0.0.0.4/CORE-V-SDK
+
+COREV_TOOLCHAIN_PATH=$HOME/work/opt/corev-openhw-gcc-centos7-20230905
+COREV_TOOLCHAIN_BIN=$COREV_TOOLCHAIN_PATH/bin
+COREV_TOOLCHAIN_LIB=$COREV_TOOLCHAIN_PATH/lin
+COREV_TOOLCHAIN_MAN=$COREV_TOOLCHAIN_PATH/share/man
+
+OPENSSL_BIN=$HOME/work/opt/openssl-1.1.1w/bin
+OPENSSL_LIB=$HOME/work/opt/openssl-1.1.1w/lib
+OPENSSL_MAN=$HOME/work/opt/openssl-1.1.1w/share/man
+
+PYTHON312_BIN=$HOME/work/opt/python-3.12.0/bin
+PYTHON312_LIB=$HOME/work/opt/python-3.12.0/lib
+
+# wavedrom
+# TODO
+
+# gtkwave
+# TODO
+
+# kactus2
+# TODO
+
+if [[ ! -v MANPATH ]]; then
+	export MANPATH=$(manpath -g):$VERILATOR_MAN
+else
+	export MANPATH=$(manpath -g):$MANPATH:$VERILATOR_MAN
+fi
+export MANPATH=$(manpath -g):$MANPATH:$OPENSSL_MAN
+export MANPATH=$(manpath -g):$MANPATH:$COREV_TOOLCHAIN_MAN
+echo "MANPATH: $MANPATH"
+
+
+export PATH=$DEVTOOL12_BIN:$PATH
+export PATH=$OPENSSL_BIN:$PATH
+export PATH=$PYTHON312_BIN:$PATH
+export PATH=$PATH:$VERIBLE_BIN
+export PATH=$PATH:$VERILATOR_BIN
+export PATH=$PATH:$XCELIUM_BIN
+export PATH=$PATH:$COREV_SDK_BIN
+export PATH=$PATH:$COREV_TOOLCHAIN_BIN
+echo "PATH: $PATH"
+
+
+if [[ ! -v LD_LIBRARY_PATH ]]; then
+	export LD_LIBRARY_PATH=$OPENSSL_LIB
+else
+	export LD_LIBRARY_PATH=$OPENSSL_LIB:$LD_LIBRARY_PATH
+fi
+export LD_LIBRARY_PATH=$DEVTOOL12_LIB:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$PYTHON312_LIB:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$SYSTEMC_LIBDIR:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$XCLELIUM_LIBS:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$COREV_TOOLCHAIN_LIB:$LD_LIBRARY_PATH
+echo "LD_LIBRARY_PATH: $LD_LIBRARY_PATH"
