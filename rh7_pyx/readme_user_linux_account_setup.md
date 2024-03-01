@@ -125,7 +125,7 @@ Installation uniquement sur mon user account. (pour l'instant)
 
 - link git repo home config scripts into user home folder
   > cd $HOME
-  > USER_LNX_ENV_PATH=$HOME/work/perso/linux_env/rh7_pyx/home_config_scripts
+  > set USER_LNX_ENV_PATH=$HOME/work/perso/linux_env/rh7_pyx/home_config_scripts
   > rm $HOME/.bash_aliases && ln -s $USER_LNX_ENV_PATH/.bash_aliases
   > rm $HOME/.bash_functions && ln -s $USER_LNX_ENV_PATH/.bash_functions
   > rm $HOME/.bash_profile && ln -s $USER_LNX_ENV_PATH/.bash_profile
@@ -133,16 +133,19 @@ Installation uniquement sur mon user account. (pour l'instant)
   > rm $HOME/.bash_tools && ln -s $USER_LNX_ENV_PATH/.bash_tools
 
 - install git aware prompt:
-  >mkdir ~/.bash
-  >cd ~/.bash
-  >git clone https://github.com/jimeh/git-aware-prompt.git
+  > mkdir ~/.bash
+  > cd ~/.bash
+  > git clone https://github.com/jimeh/git-aware-prompt.git
   
   Edit your ~/.bash_profile or ~/.profile or ~/.bashrc (for Ubuntu) and add the following to the top:
-  >export GITAWAREPROMPT=~/.bash/git-aware-prompt
-  >source "${GITAWAREPROMPT}/main.sh"
+  > export GITAWAREPROMPT=~/.bash/git-aware-prompt
+  > source "${GITAWAREPROMPT}/main.sh"
 
 ### Installed Python packages
 
 See file *python_requirements_local.txt* file.
 It is generated using command:
 > pip3 freeze --path $HOME/.local/lib/python3.12/site-packages > python_requirements_local.txt
+
+To install them on a new user account:
+> pip3 install -r python_requirements_local.txt
