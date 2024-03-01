@@ -12,3 +12,5 @@
 	d = difftool
 [merge]
 	tool = meld    
+[color]
+	ui = auto
