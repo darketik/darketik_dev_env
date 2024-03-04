@@ -47,3 +47,7 @@ alias oct='cal -m 10'
 alias nov='cal -m 11'
 alias dec='cal -m 12'
 
+
+
+alias whichproj='head -3 $CMD/projets/projdef; grep -i "\!*" $CMD/projets/projdef; tail -1 $CMD/projets/projdef;echo $comment;echo $CMD/projets/projdef;echo $comment'
+

@@ -2,7 +2,6 @@
 # TODO
 
 - align cshrc_tools to bashrc_tools
-- Add .conda folder into darketik linux env git repo ?
 - finish install of 
   - gtkwave
   - wavedrom

@@ -5,3 +5,5 @@ alias ll 'ls -alF'
 alias la 'ls -A'
 alias lt 'ls -lt'
 alias ltr 'ls -ltr'
+
+alias whichproj         'head -3 $CMD/projets/projdef; grep -i "\!*" $CMD/projets/projdef; tail -1 $CMD/projets/projdef;echo $comment;echo $CMD/projets/projdef;echo $comment'
