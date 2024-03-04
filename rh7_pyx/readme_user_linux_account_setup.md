@@ -3,6 +3,10 @@
 
 - align cshrc_tools to bashrc_tools
 - Add .conda folder into darketik linux env git repo ?
+- finish install of 
+  - gtkwave
+  - wavedrom
+  - gtkwave
 
 # BUGS
 
@@ -65,20 +69,12 @@ Installation uniquement sur mon user account. (pour l'instant)
   - bin path: /work/users/rotenberg/opt/openssl-1.1.1w
   - https://computingforgeeks.com/how-to-install-openssl-1-1-on-centos-rhel-7/
 
-- gtkwave-3.3.117
-  - bin path: /work/users/rotenberg/opt/
-  
-- kactus2-3.12.0
-  - bin path: /work/users/rotenberg/opt/
-  
-- wavedrom-editor-v2.9.1-linux-x64
-  - bin path: /work/users/rotenberg/opt/
-
 - python 3.12
   - bin path: /isona2/rotenberg/work/opt/python-3.12.0
   - https://computingforgeeks.com/install-python-3-on-centos-rhel-7/
 
-- conda 
+- conda via miniforge
+  - I DONT REMEMBER WHY I NEEDED IT ???
   - https://github.com/conda-forge/miniforge/#download
   - curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
   - chmod +x Miniforge3-Linux-x86_64.sh
@@ -93,6 +89,21 @@ Installation uniquement sur mon user account. (pour l'instant)
 - Anaconda
   https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
   > ./Anaconda3-2023.09-0-Linux-x86_64.sh
+  > Do you wish to update your shell profile to automatically initialize conda?
+    This will activate conda on startup and change the command prompt when activated.
+    If you'd prefer that conda's base environment not be activated on startup,
+      run the following command when conda is activated:
+    conda config --set auto_activate_base false
+    You can undo this by running `conda init --reverse $SHELL`? [yes|no]
+
+  - gtkwave-3.3.117
+    - bin path: /work/users/rotenberg/opt/
+    
+  - kactus2-3.12.0
+    - bin path: /work/users/rotenberg/opt/
+    
+  - wavedrom-editor-v2.9.1-linux-x64
+    - bin path: /work/users/rotenberg/opt/
 
 ### Shell Csh
 

@@ -6,7 +6,7 @@ export SYSTEMC_LIBDIR=$HOME/work/opt/systemc-2.3.4/lib-linux64
 export VERILATOR_ROOT=$HOME/work/opt/verilator/verilator_src
 
 XCELIUM_VER=229_004
-XCELIUM_BIN="/CADENCE/XCELIUM$XCELIUM_VER/tools/bin /CADENCE/XCELIUM$XCELIUM_VER/tools/xcelium/bin"
+XCELIUM_BIN="/CADENCE/XCELIUM$XCELIUM_VER/tools/bin:/CADENCE/XCELIUM$XCELIUM_VER/tools/xcelium/bin"
 XCLELIUM_LIBS=/CADENCE/XCELIUM$XCELIUM_VER/tools/lib:/CADENCE/XCELIUM$XCELIUM_VER/tools/vmgr/lib:/CADENCE/XCELIUM$XCELIUM_VER/tools/ep/lib
 
 DEVTOOL12_BIN=/opt/rh/devtoolset-12/root/usr/bin
