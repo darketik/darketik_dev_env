@@ -1,8 +1,9 @@
 
 # TODO
 
+- transfer pyx /cmd useful scripts into bash env to become tcsh agnostic
 - align cshrc_tools to bashrc_tools
-- finish install of 
+- finish install of
   - gtkwave
   - wavedrom
   - gtkwave
@@ -88,12 +89,16 @@ Installation uniquement sur mon user account. (pour l'instant)
 - Anaconda
   https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
   > ./Anaconda3-2023.09-0-Linux-x86_64.sh
-  > Do you wish to update your shell profile to automatically initialize conda?
+  - to enbale or not conda by default in your shell:
+    Do you wish to update your shell profile to automatically initialize conda?
     This will activate conda on startup and change the command prompt when activated.
     If you'd prefer that conda's base environment not be activated on startup,
       run the following command when conda is activated:
     conda config --set auto_activate_base false
     You can undo this by running `conda init --reverse $SHELL`? [yes|no]
+  - if any libmaba or libarchive issue run below cmd
+    > conda install --solver=classic conda-forge::conda-libmamba-solver conda-forge::libmamba conda-forge::libmambapy conda-forge::libarchive
+    > conda config --set solver libmamba
 
   - gtkwave-3.3.117
     - bin path: /work/users/rotenberg/opt/

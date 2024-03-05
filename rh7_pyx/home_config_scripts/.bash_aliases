@@ -48,6 +48,9 @@ alias nov='cal -m 11'
 alias dec='cal -m 12'
 
 
+## PYX STRANGER THINGS
 
+export CMD=/cmd
 alias whichproj='head -3 $CMD/projets/projdef; grep -i "\!*" $CMD/projets/projdef; tail -1 $CMD/projets/projdef;echo $comment;echo $CMD/projets/projdef;echo $comment'
+alias pyxca52="source $CMD/set_pyx_proj pyxca52"
 
