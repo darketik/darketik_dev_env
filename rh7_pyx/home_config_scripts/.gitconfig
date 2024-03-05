@@ -1,16 +1,38 @@
 [user]
-	email = darketik@gmail.com
-	name = Darketik
+	name = Florent Rotenberg
+	email = florent.rotenberg@pyxalis.com
+
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+
+[pull]
+	rebase = true
+
 [push]
 	default = simple
-[diff]
-	tool = vimdiff
+	
+[log]
+	decorate = full
+
+[rebase]
+	autostash = true
+
+[alias]
+	d = difftool
+	ll = log --graph --oneline --decorate --all
+
 [difftool]
 	prompt = false
-[alias]
-	ll = log --graph --oneline --decorate --all
-	d = difftool
+
+[diff]
+	tool = vimdiff
+
 [merge]
-	tool = meld    
+	tool = meld
+
 [color]
 	ui = auto
+
