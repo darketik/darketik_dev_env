@@ -51,6 +51,10 @@ alias dec='cal -m 12'
 ## PYX STRANGER THINGS
 
 # export CMD=/cmd
-alias whichproj='head -3 $CMD/projets/projdef; grep -i "\!*" $CMD/projets/projdef; tail -1 $CMD/projets/projdef;echo $comment;echo $CMD/projets/projdef;echo $comment'
+alias whichproj='head -3 $HOME/pyx_utils/projdef; grep -i "\!*" $HOME/pyx_utils/projdef; tail -1 $HOME/pyx_utils/projdef;echo $comment;echo $HOME/pyx_utils/projdef;echo $comment'
 alias pyxca52="source $HOME/pyx_utils/set_pyx_proj.sh pyxca52"
+alias pyxca46a0="source $HOME/pyx_utils/set_pyx_proj.sh pyxca46a0"
+alias pkvl=pyxca52
+alias ouranos=pyxca46a0
+
 
