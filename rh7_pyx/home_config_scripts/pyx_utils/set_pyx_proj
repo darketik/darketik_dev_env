@@ -1,0 +1,213 @@
+#! /bin/csh -f
+
+## Verification arguments
+#-------------------------
+echo ""
+if ( $#argv == 0 ) then
+	echo -n " projet ? > "
+	set projet = ($<)
+else
+	set projet = $1
+endif
+
+# Setting variables:
+#--------------------
+set    pyxdig = 0
+
+set PROJET=$projet
+# setenv sos_tech      ""
+# setenv sos_tech_suff ""
+
+set workdir0 = "/isona1/${projet}/${projet}/FrontEnd"
+set workarearef=$workdir0/REF
+
+## Verification coherence projet <-> utilisateur:
+#-------------------------------------------------
+$HOME/pyx_utils/check_user $projet
+if ($status == "1") then
+	exit(0)
+endif
+
+## Verification profil d'utilisateur:
+#-----------------------------------
+groups $user | grep pyxdig >& /dev/null
+if ($status == "0") set pyxdig = 1
+# source /cmd/pyxdigmode
+
+## Initialisation du projet
+#----------------------------
+cd ${workdir0}
+
+# Cas projet multi-techno:
+# if (-f ${workdir0}/${projet}.cshrc) then
+# 	cd ${workdir0}
+# 	# source ${projet}.cshrc
+# 	goto STD_CASE
+# # Autre cas (cas standard):
+# else
+# STD_CASE:
+	
+# if ( $pyxdig == "1")  then
+# # Cas utilisateur digital avec repertoire REF existant:
+# 	if ( -f ${workdir0}/REF/${sos_tech}/${projet}.cshrc) then
+# 				# echo "Reference directory exists, using ${workdir0}/REF//${sos_tech}/${projet}.cshrc  to run the initialization... "
+# 				# cd $workdir0/REF/${sos_tech}
+# 				# if (! -f cds.lib ) then
+# 				# 		echo "SOFTINCLUDE sos_project.lib" > cds.lib
+# 				# 		set cdscombine = ""
+# 				# 		set cdscombine = `egrep -i "^softinclude.*cds_combine.lib" sos_project.lib`
+# 				# 		if ( `echo "$cdscombine" ` == "" ) then
+# 				# 				echo "SOFTINCLUDE cds_combine.lib" >> cds.lib
+# 				# 		endif
+# 				# 		unset cdscombine
+# 				# endif
+# 		# if ( -f ${workdir0}/.TEMPLATEcshrc ) then
+# 		# 	if (! -f ${workdir0}/.${USER}cshrc ) then
+# 		# 		echo "\033[0;32m"
+# 		# 		echo "########################################################################"
+# 		# 		echo "Missing file ${workdir0}/.${USER}cshrc"
+# 		# 		echo "Creating .${USER}cshrc from .TEMPLATEcshrc"
+# 		# 		echo "########################################################################"
+# 		# 		echo $evend
+# 		# 		cat ${workdir0}/.TEMPLATEcshrc | sed -e "s,XX_img140,$USER," | sed -e "s,<user_windows>,$USER," > ${workdir0}/.${USER}cshrc
+# 		# 	endif
+# 		# endif
+# 		# echo "digdir	${workdir0}/REF/"
+# 		# source ${projet}.cshrc
+# 		# source /cmd/disk_monitoring
+# 		# ATG_CHECK_INIT ${workdir0}/REF/${sos_tech}/.
+# 	else
+# 		# Cas utilisateur digital avec repertoire REF manquant:
+# 		# echo "missing ${workdir0}/REF/${sos_tech}/${projet}.cshrc. Please check your setup"
+# 	endif
+
+
+# Cas standard ou multi-techno:
+# else if ( ! ($?CFG_CHOICE) ) then
+# 	echo "Please which workarea you want to work in"
+# 	echo "	0) 	REF"
+# 	echo "	1) 	ANALOG"
+# #		if ( -f /isona1/$PROJET/$PROJET/FrontEnd/.{$USER}cshrc) then
+# #		echo "	2)      DIGIT"	
+# #		endif
+
+# 	echo ""
+# 	echo -n "Select which workarea   	>	"
+# 	set ans1 = $<
+# #		while ( $ans1 != "0" && $ans1 != "1" && $ans1 != "2")
+# #			echo -n "Select which workarea ( 0 or 1 or 2 ) >	"
+# 			while ( $ans1 != "0" && $ans1 != "1" )
+# 					echo -n "Select which workarea ( 0 or 1 ) >        "
+# 				set ans1 = ($<)
+# 	end
+# 	if ( ${ans1} == "0" ) then
+# 			set sos_workdir = "REF"
+# 		echo "----------------------"
+# 		umask 007
+# 		echo "umask 007"
+# 		echo "----------------------"
+# 	endif
+
+# 	if ( ${ans1} == "1" ) then
+# 		set sos_workdir = "ANALOG/USERS/${user}"
+# 					echo "----------------------"
+# 		umask 027
+# 					echo "umask 027"
+# 					echo "----------------------"
+
+# 	endif
+
+# 	set sos_workarea = `echo ${workdir0}/${sos_workdir}/${sos_tech}`
+# 	echo ${sos_workarea}
+# 	if (-f ${sos_workarea}/${projet}.cshrc) then
+# 		cd ${sos_workarea}
+# 		if (! -f cds.lib ) then
+# 			echo "SOFTINCLUDE sos_project.lib" > cds.lib
+# 						set cdscombine = ""
+# 			set cdscombine = `egrep -i "^softinclude.*cds_combine.lib" sos_project.lib`
+# 						if ( `echo "$cdscombine" ` == "" ) then
+# 								echo "SOFTINCLUDE cds_combine.lib" >> cds.lib
+# 						endif
+# 						unset cdscombine
+
+# 		endif			
+# 		source ${projet}.cshrc
+# 		source /cmd/disk_monitoring
+# 		ATG_CHECK_INIT ${sos_workarea}/.
+# 		set projetREF  = `echo "$workdir0/REF/{$sos_tech}"`
+# 		if ( -d $projetREF ) then
+# 							source /cmd/check_project_workarea $projetREF 
+# 					endif
+		
+# 		echo "\033[0;32m"
+# 		echo "you are here:"
+# 		echo $PWD$evend
+# 		echo ""
+# 					if ( ${sos_workdir} == "REF" ) then
+# 							if (! -f .SOS/SHARED ) then
+# 									echo $evred
+# 									echo "this a SHARED workarea, but not yet configured"
+# 									echo "missing file $PWD/.SOS/SHARED$evend"
+# 									echo $evend
+# 							endif
+# 					endif
+
+
+# 	# Cas pour la premiere connexion:
+# 	else
+# 	#case when sos_workarea = `echo ${workdir0}/${sos_workdir}/${sos_tech}` do not exist
+# 		echo "Project structure does not yet exist "
+# 		if ( ! ($?CFG_CHOICE) ) then
+# 			echo "--------------------------------------------"
+# 			echo "DO YOU WANT TO CREATE THE workarea ${workdir0}/${sos_workdir}/${sos_tech}"
+# 			echo "--------------------------------------------"
+# 			echo "answer y (yes ) or n (no)"
+# 			echo "--------------------------------------------"
+	
+# 			set ans2 = $<
+# 			while ( $ans2 != "y" && $ans2 != "n")
+# 				echo -n "Enter  y (yes ) or n (no) >	"
+# 				set ans2 = ($<)
+# 			end
+
+
+# 			if ( ${ans2} == "y" ) then
+# 				echo " Running ClioSoft environment..."
+# 				echo ""
+# 				mkdir -p ${workdir0}/${sos_workdir}/$sos_tech
+# 				cd ${workdir0}/${sos_workdir}/$sos_tech
+# 				CLIO_7.20
+# 				echo " Creating environment...."
+# 				echo ""
+# 				soscmd newworkarea PYX_PROD ${projet}${sos_tech_suff} -LCACHED ./
+# 				soscmd populate .
+# 				if ( ${sos_workdir} == "REF" ) then
+# 					if (! -f .SOS/SHARED ) then
+# 						echo full > .SOS/SHARED
+# 					endif					
+# 				endif
+# 				if (! -f cds.lib ) then
+# 					echo "SOFTINCLUDE sos_project.lib" > cds.lib
+# 					set cdscombine = ""
+# 					set cdscombine = `egrep -i "^softinclude.*cds_combine.lib" sos_project.lib`
+# 								if ( `echo "$cdscombine" ` == "" ) then
+# 						echo "SOFTINCLUDE cds_combine.lib" >> cds.lib
+# 					endif
+# 					unset cdscombine
+# 				endif			
+# 				echo " Sourcing environment...."
+# 				echo ""
+# 				source ${projet}.cshrc
+# 				ATG_CHECK_INIT $sos_workarea/.
+# 			endif
+# 	endif
+# endif
+# foreach projlibdir (`echo "LIBS_PROJECT LIBS_PERSO LIBS_DEV"`)
+# 		if (! -d $projlibdir ) then 
+# 			mkdir -p $projlibdir
+# 		endif
+# end
+# endif
+
+# END:
+# exit(0)

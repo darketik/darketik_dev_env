@@ -122,6 +122,7 @@ Installation uniquement sur mon user account. (pour l'instant)
   > rm $HOME/.mycshrc_aliases && ln -s $USER_LNX_ENV_PATH/.mycshrc_aliases
   > rm $HOME/.git-completion.bash && ln -s $USER_LNX_ENV_PATH/.git-completion.bash
   > rm $HOME/.gitconfig && ln -s $USER_LNX_ENV_PATH/.gitconfig
+  > ln -s $USER_LNX_ENV_PATH/pyx_utils
 
 - git completion:
   - link script

@@ -1,14 +1,14 @@
 #! /bin/csh
 # vi: syntax=tcsh
 
-if (! $?CMD) setenv CMD /cmd
+# if (! $?CMD) setenv CMD /cmd
 
 limit coredumpsize 0
 # setenv LM_PROJECT 1230
 
 # source $CMD/FICHIERS_DE_DEMARRAGE/pyxuser/linux.cshrc
 # source $CMD/init_aliases
-source $CMD/projets_aliases
+# source $CMD/projets_aliases
 
 # FR> Better git completion
 source ~/.git-completion.tcsh
@@ -36,6 +36,8 @@ if (-e $HOME/.mycshrc_aliases) source $HOME/.mycshrc_aliases
 
 ## Set umask for new folder/files permissions defaut setting
 umask 022
+
+unsetenv CMD
 
 ## FR> jump into bash shell
 scl enable devtoolset-12 bash

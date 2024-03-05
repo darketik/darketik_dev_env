@@ -105,3 +105,5 @@ eval "$(/isona2/rotenberg/work/opt/anaconda3/bin/conda shell.bash hook)"
 # <<< conda initialize <<<
 
 print_sysinfo
+
+unset CMD

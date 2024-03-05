@@ -1,0 +1,45 @@
+#! /bin/csh -f
+#================================================================================
+#
+# Cshell appele par set_pyx_proj pour verifier la coherence utilisateur - projet
+#
+#--------------------------------------------------------------------------------
+#
+# JUN/03/22  (EV)        - Creation a partir de prjnew
+# JUN/13/22  (EV)        - Ajout precisions commentaires
+#
+#================================================================================
+
+
+## Verification arguments
+#-------------------------
+echo ""
+if ( $#argv == 0 ) then
+	echo -n " projet ? > "
+	set projet = ($<)
+else
+	set projet = $1
+endif
+
+## Recup info projet:
+#----------------------
+set foundry  = `grep $projet $PROJDIR/projdef | cut -d'|' -f6 | sed 's; ;;g'`
+
+set usr_suff = `echo $USER | cut -d_ -f2`
+
+if ( $foundry == "STm" && $usr_suff != "img140" ) then
+	echo ""
+	echo " You try to initialize a ST project using $USER user..."
+	echo " Please retry using the expected img140 user"
+	echo " Exiting ..."
+	echo ""
+	exit (1)
+else if ( $foundry != "STm" && $usr_suff == "img140" ) then
+	echo ""
+	echo " You try to initialize this project using $USER user ..."
+	echo " Please retry using your default user (non img140 account)"
+	echo " Exiting ..."
+	echo ""
+	exit (1)
+endif
+
