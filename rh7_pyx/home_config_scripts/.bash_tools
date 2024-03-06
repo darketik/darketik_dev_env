@@ -1,9 +1,11 @@
 #! /bin/bash
 # vi: syntax=bash
 
-export SYSTEMC_INCLUDE=$HOME/work/opt/systemc-2.3.4/include
-export SYSTEMC_LIBDIR=$HOME/work/opt/systemc-2.3.4/lib-linux64
-export VERILATOR_ROOT=$HOME/work/opt/verilator/verilator_src
+USER_OPT=$HOME/work/opt
+
+export SYSTEMC_INCLUDE=$USER_OPT/systemc-2.3.4/include
+export SYSTEMC_LIBDIR=$USER_OPT/systemc-2.3.4/lib-linux64
+export VERILATOR_ROOT=$USER_OPT/verilator/verilator_src
 
 XCELIUM_VER=229_004
 XCELIUM_BIN="/CADENCE/XCELIUM$XCELIUM_VER/tools/bin:/CADENCE/XCELIUM$XCELIUM_VER/tools/xcelium/bin"
@@ -12,24 +14,26 @@ XCLELIUM_LIBS=/CADENCE/XCELIUM$XCELIUM_VER/tools/lib:/CADENCE/XCELIUM$XCELIUM_VE
 DEVTOOL12_BIN=/opt/rh/devtoolset-12/root/usr/bin
 DEVTOOL12_LIB=/opt/rh/devtoolset-12/root/usr/lib64:/opt/rh/devtoolset-12/root/usr/lib:/opt/rh/devtoolset-12/root/usr/lib64/dyninst:/opt/rh/devtoolset-12/root/usr/lib/dyninst
 
-VERIBLE_BIN=$HOME/work/opt/verible-v0.0-3416-g470e0b95/bin
+VERIBLE_BIN=$USER_OPT/verible-v0.0-3416-g470e0b95/bin
 
-VERILATOR_BIN=$HOME/work/opt/verilator/install/bin
-VERILATOR_MAN=$HOME/work/opt/verilator/install/share/man
+VERILATOR_BIN=$USER_OPT/verilator/install/bin
+VERILATOR_MAN=$USER_OPT/verilator/install/share/man
 
-COREV_SDK_BIN=$HOME/work/opt/OpenHW/CORE-V-SDKv0.0.0.4/CORE-V-SDK
+COREV_SDK_BIN=$USER_OPT/OpenHW/CORE-V-SDKv0.0.0.4/CORE-V-SDK
 
-COREV_TOOLCHAIN_PATH=$HOME/work/opt/corev-openhw-gcc-centos7-20230905
+COREV_TOOLCHAIN_PATH=$USER_OPT/corev-openhw-gcc-centos7-20230905
 COREV_TOOLCHAIN_BIN=$COREV_TOOLCHAIN_PATH/bin
 COREV_TOOLCHAIN_LIB=$COREV_TOOLCHAIN_PATH/lin
 COREV_TOOLCHAIN_MAN=$COREV_TOOLCHAIN_PATH/share/man
 
-OPENSSL_BIN=$HOME/work/opt/openssl-1.1.1w/bin
-OPENSSL_LIB=$HOME/work/opt/openssl-1.1.1w/lib
-OPENSSL_MAN=$HOME/work/opt/openssl-1.1.1w/share/man
+OPENSSL_BIN=$USER_OPT/openssl-1.1.1w/bin
+OPENSSL_LIB=$USER_OPT/openssl-1.1.1w/lib
+OPENSSL_MAN=$USER_OPT/openssl-1.1.1w/share/man
 
-PYTHON312_BIN=$HOME/work/opt/python-3.12.0/bin
-PYTHON312_LIB=$HOME/work/opt/python-3.12.0/lib
+PYTHON312_BIN=$USER_OPT/python-3.12.0/bin
+PYTHON312_LIB=$USER_OPT/python-3.12.0/lib
+
+FIREFOX_BIN=$USER_OPT/firefox
 
 # wavedrom
 # TODO
@@ -53,11 +57,13 @@ echo "MANPATH: $MANPATH"
 export PATH=$DEVTOOL12_BIN:$PATH
 export PATH=$OPENSSL_BIN:$PATH
 export PATH=$PYTHON312_BIN:$PATH
+export PATH=$FIREFOX_BIN:$PATH
 export PATH=$PATH:$VERIBLE_BIN
 export PATH=$PATH:$VERILATOR_BIN
 export PATH=$PATH:$XCELIUM_BIN
 export PATH=$PATH:$COREV_SDK_BIN
 export PATH=$PATH:$COREV_TOOLCHAIN_BIN
+
 echo "PATH: $PATH"
 
 
