@@ -1,9 +1,9 @@
 
 # TODO
 
-- transfer pyx /cmd useful scripts into bash env to become tcsh agnostic
-- align cshrc_tools to bashrc_tools
-- finish install of
+[x] transfer pyx /cmd useful scripts into bash env to become tcsh agnostic
+[x] align cshrc_tools to bashrc_tools
+[ ] finish install of
   - gtkwave
   - wavedrom
   - gtkwave
@@ -115,11 +115,10 @@ Installation uniquement sur mon user account. (pour l'instant)
   > cd $HOME
   > set USER_LNX_ENV_PATH=$HOME/work/perso/linux_env/rh7_pyx/home_config_scripts
   > rm $HOME/.cshrc && ln -s $USER_LNX_ENV_PATH/.cshrc
+  > rm $HOME/.cshrc_tools && ln -s $USER_LNX_ENV_PATH/.mycshrc_tools
+  > rm $HOME/.cshrc_aliases && ln -s $USER_LNX_ENV_PATH/.mycshrc_aliases
   > rm $HOME/.login && ln -s $USER_LNX_ENV_PATH/.login
   > rm $HOME/.logout && ln -s $USER_LNX_ENV_PATH/.logout
-  > rm $HOME/.mycshrc && ln -s $USER_LNX_ENV_PATH/.mycshrc
-  > rm $HOME/.mycshrc_tools && ln -s $USER_LNX_ENV_PATH/.mycshrc_tools
-  > rm $HOME/.mycshrc_aliases && ln -s $USER_LNX_ENV_PATH/.mycshrc_aliases
   > rm $HOME/.git-completion.bash && ln -s $USER_LNX_ENV_PATH/.git-completion.bash
   > rm $HOME/.gitconfig && ln -s $USER_LNX_ENV_PATH/.gitconfig
   > ln -s $USER_LNX_ENV_PATH/pyx_utils
