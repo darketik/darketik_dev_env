@@ -2,9 +2,9 @@
 # vi: syntax=tcsh
 
 ## what's that ????? 
-if (! $?PROJET) then
-	setenv PROJET `$CMD/$arch/chkprj`
-endif
+# if (! $?PROJET) then
+# 	setenv PROJET `$CMD/$arch/chkprj`
+# endif
 
 # FR> Better git completion
 source ~/.git-completion.tcsh

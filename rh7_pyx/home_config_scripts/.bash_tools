@@ -44,15 +44,18 @@ FIREFOX_BIN=$USER_OPT/firefox
 # kactus2
 # TODO
 
+
+echo "##############################################################"
+echo "# BASH ENV VARIABLES"
+echo "##############################################################"
 if [[ ! -v MANPATH ]]; then
 	export MANPATH=$(manpath -g):$VERILATOR_MAN
 else
-	export MANPATH=$(manpath -g):$MANPATH:$VERILATOR_MAN
+	export MANPATH=$(manpath -g):$VERILATOR_MAN
 fi
-export MANPATH=$(manpath -g):$MANPATH:$OPENSSL_MAN
-export MANPATH=$(manpath -g):$MANPATH:$COREV_TOOLCHAIN_MAN
+export MANPATH=$(manpath -g):$OPENSSL_MAN
+export MANPATH=$(manpath -g):$COREV_TOOLCHAIN_MAN
 echo "MANPATH: $MANPATH"
-
 
 export PATH=$DEVTOOL12_BIN:$PATH
 export PATH=$OPENSSL_BIN:$PATH
@@ -63,7 +66,6 @@ export PATH=$PATH:$VERILATOR_BIN
 export PATH=$PATH:$XCELIUM_BIN
 export PATH=$PATH:$COREV_SDK_BIN
 export PATH=$PATH:$COREV_TOOLCHAIN_BIN
-
 echo "PATH: $PATH"
 
 
@@ -78,3 +80,4 @@ export LD_LIBRARY_PATH=$SYSTEMC_LIBDIR:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$XCLELIUM_LIBS:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$COREV_TOOLCHAIN_LIB:$LD_LIBRARY_PATH
 echo "LD_LIBRARY_PATH: $LD_LIBRARY_PATH"
+echo ""

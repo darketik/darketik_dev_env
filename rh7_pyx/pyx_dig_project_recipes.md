@@ -1,3 +1,7 @@
+# TODO
+
+# BUG
+
 # Various Pyx hidden commands
 
 * *whichproj* - list all existing projects
