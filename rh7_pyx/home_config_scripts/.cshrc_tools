@@ -8,7 +8,7 @@ setenv SYSTEMC_LIBDIR $USER_OPT/systemc-2.3.4/lib-linux64
 setenv VERILATOR_ROOT $USER_OPT/verilator/verilator_src
 
 set XCELIUM_VER=229_004
-set XCELIUM_BIN="/CADENCE/XCELIUM$XCELIUM_VER/tools/bin /CADENCE/XCELIUM$XCELIUM_VER/tools/xcelium/bin"
+set XCELIUM_BIN="/CADENCE/XCELIUM$XCELIUM_VER/tools/bin:/CADENCE/XCELIUM$XCELIUM_VER/tools/xcelium/bin"
 set XCLELIUM_LIBS=/CADENCE/XCELIUM$XCELIUM_VER/tools/lib:/CADENCE/XCELIUM$XCELIUM_VER/tools/vmgr/lib:/CADENCE/XCELIUM$XCELIUM_VER/tools/ep/lib
 
 set DEVTOOL12_BIN=/opt/rh/devtoolset-12/root/usr/bin
@@ -47,37 +47,34 @@ set FIREFOX_BIN=$USER_OPT/firefox
 echo "##############################################################"
 echo "# CSH ENV VARIABLES"
 echo "##############################################################"
-# if (! $?MANPATH) then
-# 	setenv MANPATH "`manpath`:$VERILATOR_MAN"
-# else
-# 	setenv MANPATH "`manpath`:$VERILATOR_MAN"
-# endif
-# setenv MANPATH "`manpath`:$OPENSSL_MAN"
-# setenv MANPATH "`manpath`:$COREV_TOOLCHAIN_MAN"
+unsetenv MANPATH
+setenv MANPATH `manpath`
+setenv MANPATH $MANPATH\:$VERILATOR_MAN
+setenv MANPATH $MANPATH\:$OPENSSL_MAN
+setenv MANPATH $MANPATH\:$COREV_TOOLCHAIN_MAN
 echo "MANPATH: $MANPATH"
 
-# set path = ($DEVTOOL12_BIN \
-# 			$OPENSSL_BIN \
-# 			$PYTHON312_BIN \
-# 			$FIREFOX_BIN \
-# 			$path \
-# 			$HOME/.local/bin \
-# 			$VERIBLE_BIN \
-# 			$VERILATOR_BIN \
-# 			$XCELIUM_BIN \
-# 			$COREV_SDK_BIN \
-# 			$COREV_TOOLCHAIN_BIN)
+setenv PATH $DEVTOOL12_BIN\:$PATH
+setenv PATH $OPENSSL_BIN\:$PATH
+setenv PATH $PYTHON312_BIN\:$PATH
+setenv PATH $FIREFOX_BIN\:$PATH
+setenv PATH $PATH\:$HOME/.local/bin
+setenv PATH $PATH\:$VERIBLE_BIN
+setenv PATH $PATH\:$VERILATOR_BIN
+setenv PATH $PATH\:$XCELIUM_BIN
+setenv PATH $PATH\:$COREV_SDK_BIN
+setenv PATH $PATH\:$COREV_TOOLCHAIN_BIN
 echo "PATH: $PATH"
 
-# if (! $?LD_LIBRARY_PATH) then
-# 	setenv LD_LIBRARY_PATH "$OPENSSL_LIB"
-# else
-# 	setenv LD_LIBRARY_PATH "$OPENSSL_LIB:$LD_LIBRARY_PATH"
-# endif
-# setenv LD_LIBRARY_PATH "$DEVTOOL12_LIB:$LD_LIBRARY_PATH"
-# setenv LD_LIBRARY_PATH "$PYTHON312_LIB:$LD_LIBRARY_PATH"
-# setenv LD_LIBRARY_PATH "$SYSTEMC_LIBDIR:$LD_LIBRARY_PATH"
-# setenv LD_LIBRARY_PATH "$XCLELIUM_LIBS:$LD_LIBRARY_PATH"
-# setenv LD_LIBRARY_PATH "$COREV_TOOLCHAIN_LIB:$LD_LIBRARY_PATH"
-# echo "LD_LIBRARY_PATH: $LD_LIBRARY_PATH"
+if (! $?LD_LIBRARY_PATH) then
+	setenv LD_LIBRARY_PATH $OPENSSL_LIB
+else
+	setenv LD_LIBRARY_PATH $OPENSSL_LIB\:$LD_LIBRARY_PATH
+endif
+setenv LD_LIBRARY_PATH $DEVTOOL12_LIB\:$LD_LIBRARY_PATH
+setenv LD_LIBRARY_PATH $PYTHON312_LIB\:$LD_LIBRARY_PATH
+setenv LD_LIBRARY_PATH $SYSTEMC_LIBDIR\:$LD_LIBRARY_PATH
+setenv LD_LIBRARY_PATH $XCLELIUM_LIBS\:$LD_LIBRARY_PATH
+setenv LD_LIBRARY_PATH $COREV_TOOLCHAIN_LIB\:$LD_LIBRARY_PATH
+echo "LD_LIBRARY_PATH: $LD_LIBRARY_PATH"
 echo ""
