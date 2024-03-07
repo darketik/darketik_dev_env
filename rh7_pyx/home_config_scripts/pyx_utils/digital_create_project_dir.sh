@@ -18,9 +18,6 @@
 #--   NB : les dépots git doivent dans un premier temps avoir été créés dans GitLab
 #--
 #-------------------------------------------------------------------------
-#-- AUTHOR        : AF_img140
-#-- CREATION DATE : 24/02/2022
-#-------------------------------------------------------------------------
 
 usage="
 $(basename "$0") [-h|--help] -g|--group gitlab_project_group -n|--name project_name -t|--type_proj|--type <type_proj> [-au|--adduser [<username>]]
@@ -187,7 +184,7 @@ DIGIT_PATH=$(pwd)/${digit_folder}
 USER_PATH=${DIGIT_PATH}/USERS/${username}
 cd ${USER_PATH}
 
-project_lib_name="${name}"
+project_lib_name=${name}
 repository_path="git@gitlab.pyxalis.local:projects-root/${group}/digital-design/${project_lib_name}.git"
 
 echo ""
@@ -278,5 +275,7 @@ fi
 #     Then you can call the create_block.pl script and name your new blocks ddg_<blocname> ;)\033[0;0m"       
 
 echo ""
-echo -e "INFO: Move into ${USER_PATH}/${project_lib_name} working folder"
+cd ~
 cd ${USER_PATH}/${project_lib_name}
+echo "INFO: Move into ${USER_PATH}/${project_lib_name} working folder"
+exec bash
