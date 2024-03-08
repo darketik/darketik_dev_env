@@ -1,17 +1,17 @@
 
 # TODO
 
-  - [v] transfer pyx /cmd useful scripts into bash env to become tcsh agnostic
-  - [v] align cshrc_tools to bashrc_tools
-  - [ ] finish install of
-    - [ ] gtkwave
-    - [ ] wavedrom
-    - [ ] gtkwave
+- [x] transfer pyx /cmd useful scripts into bash env to become tcsh agnostic
+- [x] align cshrc_tools to bashrc_tools
+- [ ] finish install of
+  - [ ] gtkwave
+  - [ ] wavedrom
+  - [ ] gtkwave
 
 # BUGS
 
-- [v] No more man tool available in tcsh ?
-- [v] conda force python to 3.11
+- [x] No more man tool available in tcsh ?
+- [x] conda force python to 3.11
 
 # Install user linux account
 

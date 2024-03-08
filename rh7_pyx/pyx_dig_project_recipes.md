@@ -1,6 +1,8 @@
 # TODO
 
-  - [ ]
+- [ ] Split <ddg_XXXX_lib>.cshrc in ***DIGIT/USERS/<user_name>/<ddg_XXXX_lib>*** in modular and independant parts
+- [ ] Split pyx git repo into git sub repo
+- [ ] create manifest file with all git repo used in a <ddg_XXXX_lib> project with git tag/hash to track also those changes and not point on git master HEAD
 
 # BUG
 
@@ -40,7 +42,7 @@ source <ddg_XXXX_lib>.cshrc
 
 ## Docs infos utiles
 
-* I:\ISO activities\PROJETS\SPHINX\SPHINX C040\DESIGN\Digital design\procedure_creation_compte_circuit.docx
+- I:\ISO activities\PROJETS\SPHINX\SPHINX C040\DESIGN\Digital design\procedure_creation_compte_circuit.docx
 * \\\VM-MAIN\iso\ISO activities\DIGITAL\Methodologie\gestion\creation_compte_projet_digital.pdf
 * Dans pyxcaxxxx/Frontend
   * *digital_create_project_dir.sh* script
