@@ -35,6 +35,8 @@ PYTHON312_LIB=$USER_OPT/python-3.12.0/lib
 
 FIREFOX_BIN=$USER_OPT/firefox
 
+STM_STxP5_TOOLCHAIN=$USER_OPT/STM/STxP5_Toolset_2024.1-Eng1/bin
+
 # wavedrom
 # TODO
 

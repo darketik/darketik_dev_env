@@ -35,6 +35,10 @@ set PYTHON312_LIB=$USER_OPT/python-3.12.0/lib
 
 set FIREFOX_BIN=$USER_OPT/firefox
 
+set STM_STxP5_TOOLCHAIN_PATH=$USER_OPT/STM/STxP5_Toolset_2024.1-Eng1
+set STM_STxP5_TOOLCHAIN_BIN=$STM_STxP5_TOOLCHAIN_PATH/bin
+set STM_STxP5_TOOLCHAIN_LIB=$STM_STxP5_TOOLCHAIN_PATH/lib
+
 # wavedrom
 # TODO
 
@@ -64,6 +68,7 @@ setenv PATH $PATH\:$VERILATOR_BIN
 setenv PATH $PATH\:$XCELIUM_BIN
 setenv PATH $PATH\:$COREV_SDK_BIN
 setenv PATH $PATH\:$COREV_TOOLCHAIN_BIN
+setenv PATH $PATH\:$STM_STxP5_TOOLCHAIN_BIN
 echo "PATH: $PATH"
 
 if (! $?LD_LIBRARY_PATH) then
@@ -76,5 +81,11 @@ setenv LD_LIBRARY_PATH $PYTHON312_LIB\:$LD_LIBRARY_PATH
 setenv LD_LIBRARY_PATH $SYSTEMC_LIBDIR\:$LD_LIBRARY_PATH
 setenv LD_LIBRARY_PATH $XCLELIUM_LIBS\:$LD_LIBRARY_PATH
 setenv LD_LIBRARY_PATH $COREV_TOOLCHAIN_LIB\:$LD_LIBRARY_PATH
+setenv LD_LIBRARY_PATH $STM_STxP5_TOOLCHAIN_LIB\:$LD_LIBRARY_PATH
 echo "LD_LIBRARY_PATH: $LD_LIBRARY_PATH"
 echo ""
+
+echo "##############################################################"
+echo "# TOOLS specific scripts for setup"
+echo "##############################################################"
+source $STM_STxP5_TOOLCHAIN_BIN/tools_setup.csh

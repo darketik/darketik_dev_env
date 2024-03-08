@@ -1,5 +1,7 @@
 # TODO
 
+  - [ ]
+
 # BUG
 
 # Various Pyx hidden commands
@@ -10,24 +12,48 @@
 
 ## Create new project for digital design with script *digital_create_project_dir.sh*
 
+TODO
+
 ## Create new user for an existing project instance for digital design with script *digital_create_project_dir.sh*
 
-### Docs infos utiles
+TODO
+
+## Setup a project lib environment for a user in existing project and user folders
+
+This is mandatory to do some design tasks in a properly configured environment.
+Follow below command sequence for that purpose:
+
+- First go into project folder ***pyxcaXXX***:
+>
+```
+whichproj
+pyxca52
+```
+
+You fall into folder "*.../pyxca52/Frontend*". Move into your desired ***DIGIT/USERS/<user_name>/<ddg_XXXX_lib>*** folder manually (.XX_img140cshrc is of no use, it only masks a 'cd' command call, i'm pretty sure you can do it manually ;-))
+
+- Then setup project environment:
+>
+```
+source <ddg_XXXX_lib>.cshrc
+```
+
+## Docs infos utiles
 
 * I:\ISO activities\PROJETS\SPHINX\SPHINX C040\DESIGN\Digital design\procedure_creation_compte_circuit.docx
 * \\\VM-MAIN\iso\ISO activities\DIGITAL\Methodologie\gestion\creation_compte_projet_digital.pdf
 * Dans pyxcaxxxx/Frontend
   * *digital_create_project_dir.sh* script
 
-## Structure projet DIG
+# Structure projet DIG
 
-### Doc infos utiles
+## Doc infos utiles
 
 * "X:\TECH\PYX-QP-DC-19-03-B_accueil_technique.docm - Raccourci.lnk"
 * "X:\TECH\environnement_de_developpement - Raccourci.lnk"
 * "X:\TECH\Présentation_detail_circuit - Raccourci.lnk"
   
-### Windows
+## Windows
 
 * Files in each dig IP/Soc folder
   * Excel/drawio Drawings
@@ -40,7 +66,7 @@
     PROJETS/\<projname>/Digital_design/blocs/\<IPname>/\<Ipname>_regbank_C0.xlsx
 * Folder **vb_outputs** : where are generated files from VB scripts used to generate interm. Formats of memap and regbank xlsx files
   
-### Linux
+## Linux
 
 * Folder for IP/SoC design: pyxcaxxxx/Frontend/DIGIT/USERS/ddg_XXX_lib
 * ddg_XXX_lib.cshrc script :
@@ -72,18 +98,18 @@
       * Scripts, generators, fourre tout de moulinettes en differents langages historiques
     * Ddg_utils_lib : some RTL packages with VHDL functions and else
   
-### GIT management
+## GIT management
 
 * used scripts are in folder **$TOOLS_LIB/git_config***
 
-## TODO - Dig Soc RTL design hierarchy at pyxalis
+# TODO - Dig Soc RTL design hierarchy at pyxalis
 
 * ddg_dtop, ddg_top, aps_system_\<projname>/hw|sw, ...
 * I:\ISO activities\DIGITAL\Methodologie\KVCA AEDVICES\environnement_de_developpement.docx
 
-## Generation d'une IP
+# Generation d'une IP
   
-### Generate template architecture of the IP
+## Generate template architecture of the IP
 
 Run script *$TOOLS_LIB/generator/scripts/structure/create_block.pl*
 
@@ -109,7 +135,7 @@ true
 -Q- Number of signals to connect to YTEST ? (([1-9]|[12][0-9]|3[0-2]))
 3
 
-### Generate regbank views for HDL, C header IP,  memap IP
+## Generate regbank views for HDL, C header IP,  memap IP
 
 * Xls dans w10 de spec et script en VB (au secours !!!) pour generer une vue intermediaire au format txt
 * Go into **SCRIPTS** folder of the IP: 
@@ -146,25 +172,25 @@ dos2unix: converting file tb_regbank.txt to Unix format ...
 * Run *regbank_gen APS3 \<aps_system_name> \<eclipse project>* to automatically generate regbank C structure in .h files for CPU software
 * Run *regbank_gen APS3_MEM_MAP \<aps_system_name> \<eclipse project>* to automatically generate memory mapping in mem_map.h files for CPU software. **To be done at chip top level only**.
 
-## TODO - generation du SoC bus decoder
+# TODO - generation du SoC bus decoder
 
-## TODO - available commands in $TOOLS_LIB
+# TODO - available commands in $TOOLS_LIB
 
 * most of scripts are located in *$TOOLS_LIB/generator/scripts/structure* folder
 * ***FIXME***:
   * detail here up to date and used scripts today in projects
   * is there a Top template generator ?
   
-## Audit on current dig project management
+# Audit on current dig project management
 
 Notes from Meeting with Pad on the 5/12/2023.
 
-### Pb pas de centralisation des données actuellement dans les projets
+## Pb pas de centralisation des données actuellement dans les projets
 
 * Empilement historique de plein de petites moulinettes faites en de multiples langages par des personnes différentes.
 * Des trucs sous windows, des trucs sous linux
 
-### Le pourquoi de vouloir améliorer le flot actuel
+## Le pourquoi de vouloir améliorer le flot actuel
 
 * 1ere idee « long terme » est d'avoir un environnement et une methodo qui permettent, à partir d'un point d'entree unique (spec excell SoC), de générer en trois coup de marteau une structure de SoC Dig fonctionnelle, toutes les IP generees, regbank generes, instantiées, et un env de tb où l'on peut faire tourner un 1er test « CSR » d'acces aux registres du memmap. Ceci centré autour de git.
   * *y a t il un generateur de template de Top ?*
