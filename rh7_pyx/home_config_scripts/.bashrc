@@ -78,6 +78,11 @@ source "${GITAWAREPROMPT}/main.sh"
 # Standard
 export PS1="$red\u$clr@$pur\h$clr:$ylw\w $cyn\$git_branch$red\$git_dirty$clr\$ "
 
+# bash completion
+if [ -f /etc/profile.d/bash_completion.sh ]; then
+    . /etc/profile.d/bash_completion.sh
+fi
+complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' ?akefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" make
 
 # >>> conda initialize >>>
 # FR> init conda from anaconda env

@@ -32,6 +32,9 @@ alias tree='tree --dirsfirst -F'
 # Make a directory and all parent directories with verbosity.
 alias mkdir='mkdir -p -v'
 
+# git facilitators
+alias gitstatusdir='for dir in */; do (cd "$dir" && git status); done'
+
 # View the calender by typing the first three letters of the month.
 
 alias jan='cal -m 01'
@@ -47,6 +50,9 @@ alias oct='cal -m 10'
 alias nov='cal -m 11'
 alias dec='cal -m 12'
 
+## linux display resolution
+alias set_display_qhd="xrandr -s 2560x1440_60.00"
+alias set_display_fhd="xrandr -s 1920x1080_60.00"
 
 ## PYX STRANGER THINGS
 
@@ -56,5 +62,8 @@ alias pyxca52="source $HOME/pyx_utils/set_pyx_proj.sh pyxca52"
 alias pyxca46a0="source $HOME/pyx_utils/set_pyx_proj.sh pyxca46a0"
 alias pkvl=pyxca52
 alias ouranos=pyxca46a0
+
+alias simv="simvision -64bit -waves compiled/rtl/waves.shm"
+alias cdslic="lmutil lmstat -c $CDS_LIC_FILE -f"
 
 

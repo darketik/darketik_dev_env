@@ -7,8 +7,8 @@ export SYSTEMC_INCLUDE=$USER_OPT/systemc-2.3.4/include
 export SYSTEMC_LIBDIR=$USER_OPT/systemc-2.3.4/lib-linux64
 export VERILATOR_ROOT=$USER_OPT/verilator/verilator_src
 
-XCELIUM_VER=229_004
-XCELIUM_BIN="/CADENCE/XCELIUM$XCELIUM_VER/tools/bin:/CADENCE/XCELIUM$XCELIUM_VER/tools/xcelium/bin"
+XCELIUM_VER=239_007
+XCELIUM_BIN="/CADENCE/XCELIUM$XCELIUM_VER/bin:/CADENCE/XCELIUM$XCELIUM_VER/tools/bin"
 XCLELIUM_LIBS=/CADENCE/XCELIUM$XCELIUM_VER/tools/lib:/CADENCE/XCELIUM$XCELIUM_VER/tools/vmgr/lib:/CADENCE/XCELIUM$XCELIUM_VER/tools/ep/lib
 
 DEVTOOL12_BIN=/opt/rh/devtoolset-12/root/usr/bin
@@ -83,3 +83,7 @@ echo "PATH: $PATH"
 # export LD_LIBRARY_PATH=$COREV_TOOLCHAIN_LIB:$LD_LIBRARY_PATH
 echo "LD_LIBRARY_PATH: $LD_LIBRARY_PATH"
 echo ""
+
+echo "##############################################################"
+echo "# TOOLS specific scripts for setup"
+echo "##############################################################"

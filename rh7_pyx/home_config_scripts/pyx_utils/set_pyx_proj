@@ -1,5 +1,8 @@
 #! /bin/csh -f
 
 set projet = $1
+set user = $2
 set workdir0 = "/isona1/${projet}/${projet}/FrontEnd"
+setenv PROJET $projet
 cd ${workdir0}
+source .${user}cshrc

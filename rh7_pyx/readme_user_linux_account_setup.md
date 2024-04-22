@@ -160,7 +160,7 @@ Installation uniquement sur mon user account. (pour l'instant)
 
 See file *python_requirements_local.txt* file.
 It is generated using command:
-> pip3 freeze --path $HOME/.local/lib/python3.12/site-packages > python_requirements_local.txt
+> pip3 freeze --path $HOME/.local/lib/python3.12/site-packages > python_requirements_local_w2417.1.txt
 
 To install them on a new user account:
 > pip3 install -r python_requirements_local.txt
