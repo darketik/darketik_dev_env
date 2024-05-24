@@ -33,7 +33,11 @@ alias tree='tree --dirsfirst -F'
 alias mkdir='mkdir -p -v'
 
 # git facilitators
-alias gitstatusdir='for dir in */; do (cd "$dir" && git status); done'
+column_width=30
+alias tableseparator='printf "|%s|\n" "$(printf -- "-%.0s" $(seq 1 $((2 * $column_width + 3))) )"'
+alias gitstatusdir='for dir in */; do (cd "$dir" && git fetch && git status); done'
+alias gitbranchdir='tableseparator && printf "| %-*s | %-*s |\n" "$column_width" "IP" "$column_width" "Branch" && tableseparator && for dir in */; do (cd "$dir" && printf "| %-*s | %-*s |\n" "$column_width" "$(basename "$(git rev-parse --show-toplevel)")" "$column_width" "$(git rev-parse --abbrev-ref HEAD)"); done && tableseparator'
+alias gitupdatedir='for dir in */; do (cd "$dir" && git fetch && git pull); done'
 
 # View the calender by typing the first three letters of the month.
 
@@ -65,5 +69,5 @@ alias ouranos=pyxca46a0
 
 alias simv="simvision -64bit -waves compiled/rtl/waves.shm"
 alias cdslic="lmutil lmstat -c $CDS_LIC_FILE -f"
-
+alias kill_xm="ps | grep xmsim | awk '{print $1}' | xargs kill -9"
 

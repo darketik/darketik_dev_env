@@ -80,3 +80,7 @@ Consider starting the commit message with an applicable emoji:
 ?? :beer: Writing code drunkenly.
 ?? :ok_hand Updating code due to code review changes
 ??? :building_construction: Making architectural changes.
+
+# Git flow
+
+https://danielkummer.github.io/git-flow-cheatsheet/
