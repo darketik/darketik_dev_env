@@ -30,6 +30,7 @@ https://swcarpentry.github.io/git-novice/
 ## Externals ressources
 
 Add shh key to ssh-agent: https://gist.github.com/danieldogeanu/16c61e9b80345c5837b9e5045a701c99
+
 Changelog: The Changelog trailer accepts the following values:
 added: New feature
 fixed: Bug fix
@@ -39,11 +40,14 @@ removed: Feature removal
 security: Security fix
 performance: Performance improvement
 other: Other
+
 emoji git commit message convention:
 https://gitmoji.dev/
 https://kapeli.com/cheat_sheets/Gitmoji.docset/Contents/Resources/Documents/index
+
 Semantic commit message 
 https://nitayneeman.com/posts/understanding-semantic-commit-messages-using-git-and-angular/
+https://www.conventionalcommits.org/en/v1.0.0/#summary
 
 ## Git Considerations
 

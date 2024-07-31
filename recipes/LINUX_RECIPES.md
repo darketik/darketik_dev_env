@@ -46,3 +46,11 @@ pour choisir ensuite la resolution en fonction de la caract FHD ou QHD de l'ecra
 xrandr -s 1920x1080_60.00
 ou
 xrandr -s 2560x1440_60.00
+
+
+
+RESUME cmd:
+xrandr --newmode "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
+xrandr --addmode VNC-0 "1920x1080_60.00"
+xrandr --newmode "2560x1440_60.00"  312.25  2560 2752 3024 3488  1440 1443 1448 1493 -hsync +vsync
+xrandr --addmode VNC-0 "2560x1440_60.00"
