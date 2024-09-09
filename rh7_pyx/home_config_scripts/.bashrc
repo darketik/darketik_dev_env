@@ -91,4 +91,6 @@ eval "$(/isona2/rotenberg/work/opt/anaconda3/bin/conda shell.bash hook)"
 
 print_sysinfo
 
+set_display_config
+
 unset CMD
