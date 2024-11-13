@@ -11,7 +11,7 @@ alias ltr 'ls -ltr'
 alias whichproj 'head -3 $HOME/pyx_utils/projdef; grep -i "\!*" $HOME/pyx_utils/projdef; tail -1 $HOME/pyx_utils/projdef;echo $comment;echo $HOME/pyx_utils/projdef;echo $comment'
 
 alias pyxca52_FR_img140 "source $HOME/pyx_utils/set_pyx_proj pyxca52 FR_img140"
-alias pyxca52_FR_img140_DELIV "source $HOME/pyx_utils/set_pyx_proj pyxca52 FR_img140_DELIV"
+alias pyxca52_FR_img140_REGRESSION "source $HOME/pyx_utils/set_pyx_proj pyxca52 FR_img140_REGRESSION"
 alias pyxca46a0 "source $HOME/pyx_utils/set_pyx_proj pyxca46a0"
 alias pkvl pyxca52_FR_img140
 alias ouranos pyxca46a0
