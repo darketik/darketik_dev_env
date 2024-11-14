@@ -53,6 +53,8 @@ set DOXYGEN_BIN=$DOXYGEN_PATH/bin
 set IMAGEJ_ROOT=$USER_OPT/ImageJ
 set IMAGEJ_BIN=$IMAGEJ_ROOT
 
+set TEXLIVE_BIN=$USER_OPT/texlive/bin/x86_64-linux
+
 # wavedrom
 # TODO
 
@@ -78,6 +80,7 @@ setenv PATH $OPENSSL_BIN\:$PATH
 setenv PATH $PYTHON312_BIN\:$PATH
 setenv PATH $FIREFOX_BIN\:$PATH
 setenv PATH $IMAGEJ_BIN\:$PATH
+setenv PATH $TEXLIVE_BIN\:$PATH
 # setenv PATH $VSCODE_BIN\:$PATH
 setenv PATH $PATH\:$HOME/.local/bin
 setenv PATH $PATH\:$VERIBLE_BIN
