@@ -15,3 +15,7 @@ alias pyxca52_FR_img140_REGRESSION "source $HOME/pyx_utils/set_pyx_proj pyxca52 
 alias pyxca46a0 "source $HOME/pyx_utils/set_pyx_proj pyxca46a0"
 alias pkvl pyxca52_FR_img140
 alias ouranos pyxca46a0
+
+alias pyxsphinxriscv "source $HOME/pyx_utils/set_pyx_proj pyxca48a0 FR_img140_riscv_ibex"
+alias pyxsphinxriscvsyspad "source $HOME/pyx_utils/set_pyx_proj pyxca48a0 FR_img140_riscvsyspad"
+alias pyxsphinxaps "source $HOME/pyx_utils/set_pyx_proj pyxca48a0 FR_img140_aps"
