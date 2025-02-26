@@ -53,6 +53,9 @@ GLIBC_PATH=$USER_OPT/glibc-$GLIBC_VER
 GLIBC_BIN=$GLIBC_PATH/bin
 GLIBC_LIB=$GLIBC_PATH/lib
 
+ZSTD_PATH=$USER_OPT/libzstd_src/zstd
+ZSTD_LIB=$ZSTD_PATH/lib
+
 # wavedrom
 # TODO
 
