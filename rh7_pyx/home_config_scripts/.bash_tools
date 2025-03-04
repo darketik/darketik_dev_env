@@ -11,6 +11,10 @@ XCELIUM_VER=239_007
 XCELIUM_BIN="/CADENCE/XCELIUM$XCELIUM_VER/bin:/CADENCE/XCELIUM$XCELIUM_VER/tools/bin"
 XCLELIUM_LIBS=/CADENCE/XCELIUM$XCELIUM_VER/tools/lib:/CADENCE/XCELIUM$XCELIUM_VER/tools/vmgr/lib:/CADENCE/XCELIUM$XCELIUM_VER/tools/ep/lib
 
+JASPER_VER=24.09.002
+JASPER_BIN=/CADENCE/JASPERGOLD/$JASPER_VER/bin
+JASPER_LIBS=/CADENCE/JASPERGOLD/$JASPER_VER/tools/lib/64bit
+
 DEVTOOL12_BIN=/opt/rh/devtoolset-12/root/usr/bin
 DEVTOOL12_LIB=/opt/rh/devtoolset-12/root/usr/lib64:/opt/rh/devtoolset-12/root/usr/lib:/opt/rh/devtoolset-12/root/usr/lib64/dyninst:/opt/rh/devtoolset-12/root/usr/lib/dyninst
 
