@@ -74,7 +74,7 @@ set IMAGEJ_BIN=$IMAGEJ_ROOT
 
 set TEXLIVE_BIN=$USER_OPT/texlive/bin/x86_64-linux
 
-set GLIBC_VER=2.35
+set GLIBC_VER=2.40
 set GLIBC_PATH=$USER_OPT/glibc-$GLIBC_VER
 set GLIBC_BIN=$GLIBC_PATH/bin
 set GLIBC_LIB=$GLIBC_PATH/lib
@@ -86,12 +86,6 @@ set NCURSES_PATH=$USER_OPT/ncurses
 set NCURSES_BIN=$NCURSES_PATH/bin
 set NCURSES_LIB=$NCURSES_PATH/lib
 set NCURSES_MAN=$NCURSES_PATH/share/man
-
-# wavedrom
-# TODO
-
-# gtkwave
-# TODO
 
 # GNAT
 set GNAT_VER=2021
@@ -105,6 +99,12 @@ set GHDL_BIN=$GHDL_PATH/bin
 set GHDL_LIB=$GHDL_PATH/lib
 
 # Yosys OSS CAD Suite
+set OSSCADSUITE_PATH=$USER_OPT/oss-cad-suite
+
+# wavedrom
+# TODO
+
+# gtkwave
 # TODO
 
 # kactus2
@@ -182,3 +182,4 @@ echo "##############################################################"
 echo "# TOOLS specific scripts for setup"
 echo "##############################################################"
 source $STM_STxP5_TOOLCHAIN_BIN/tools_setup.csh
+
