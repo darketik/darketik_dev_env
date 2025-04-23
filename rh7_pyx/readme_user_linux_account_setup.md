@@ -21,7 +21,7 @@ Installation demandée à David pour tous les utilisateurs sur le serveur PyxDig
 
 - devtoolset-8 et devtoolset-12  
 - yum
-  - help2man
+- help2man
 
 ## Local
 
