@@ -32,5 +32,9 @@ umask 022
 
 unsetenv CMD
 
+# Fix Error in shell "OpenBLAS blas_thread_init: pthread_create failed for thread 17 of 64: Resource temporarily unavailable"
+# ulimit -u 65535
+# set  OPENBLAS_NUM_THREADS=4
+
 ## FR> jump into bash shell
 scl enable devtoolset-12 bash

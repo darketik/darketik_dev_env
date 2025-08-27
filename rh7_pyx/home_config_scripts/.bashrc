@@ -94,3 +94,7 @@ print_sysinfo
 set_display_config
 
 unset CMD
+
+# Fix Error in shell "OpenBLAS blas_thread_init: pthread_create failed for thread 17 of 64: Resource temporarily unavailable"
+# ulimit -u 65535
+# export OPENBLAS_NUM_THREADS=4

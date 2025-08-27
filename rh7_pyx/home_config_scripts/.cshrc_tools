@@ -153,7 +153,7 @@ setenv PATH $GHDL_BIN\:$PATH
 setenv PATH $AUTOMAKE_BIN\:$PATH
 setenv PATH $COREV_TOOLCHAIN_BIN\:$PATH
 setenv PATH $RISCV_TOOLCHAIN_BIN\:$PATH
-setenv PATH $STM_STxP5_TOOLCHAIN_BIN\:$PATH
+# setenv PATH $STM_STxP5_TOOLCHAIN_BIN\:$PATH
 # setenv PATH $VSCODE_BIN\:$PATH
 setenv PATH $VERIBLE_BIN\:$PATH
 setenv PATH $VERILATOR_BIN\:$PATH
@@ -178,7 +178,7 @@ setenv LD_LIBRARY_PATH $GNAT_LIB\:$LD_LIBRARY_PATH
 setenv LD_LIBRARY_PATH $GHDL_LIB\:$LD_LIBRARY_PATH
 setenv LD_LIBRARY_PATH $COREV_TOOLCHAIN_LIB\:$LD_LIBRARY_PATH
 setenv LD_LIBRARY_PATH $RISCV_TOOLCHAIN_LIB\:$LD_LIBRARY_PATH
-setenv LD_LIBRARY_PATH $STM_STxP5_TOOLCHAIN_LIB\:$LD_LIBRARY_PATH
+# setenv LD_LIBRARY_PATH $STM_STxP5_TOOLCHAIN_LIB\:$LD_LIBRARY_PATH
 setenv LD_LIBRARY_PATH $ZSTD_LIB\:$LD_LIBRARY_PATH
 setenv LD_LIBRARY_PATH $NCURSES_LIB\:$LD_LIBRARY_PATH
 
@@ -188,4 +188,4 @@ echo ""
 echo "##############################################################"
 echo "# TOOLS specific scripts for setup"
 echo "##############################################################"
-source $STM_STxP5_TOOLCHAIN_BIN/tools_setup.csh
+# source $STM_STxP5_TOOLCHAIN_BIN/tools_setup.csh
