@@ -19,7 +19,7 @@ set     end="%{\033[0m%}"
 
 # FR> set prompt; with current git branch if available.
 alias __git_current_branch 'git rev-parse --abbrev-ref HEAD >& /dev/null && echo "(`git rev-parse --abbrev-ref HEAD`)"'
-alias precmd 'set prompt="${red}%n@${magenta}%m:${yellow}%c ${cyan}`__git_current_branch`${end}\% "'
+alias precmd 'set prompt="${red}%n@${magenta}%m:${yellow}%/ ${cyan}`__git_current_branch`${end}\% "'
 
 # FR> my CSh env variable
 if (-e $HOME/.cshrc_tools) source $HOME/.cshrc_tools

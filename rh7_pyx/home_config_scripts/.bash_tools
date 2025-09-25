@@ -177,5 +177,5 @@ echo ""
 echo "##############################################################"
 echo "# TOOLS specific scripts for setup"
 echo "##############################################################"
-# source $STM_STxP5_TOOLCHAIN_BIN/tools_setup.sh
+source $STM_STxP5_TOOLCHAIN_BIN/tools_setup.sh
 source $OSSCADSUITE_PATH/environment
