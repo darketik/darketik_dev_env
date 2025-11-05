@@ -1,5 +1,6 @@
 #! /bin/csh
 # vi: syntax=tcsh
+alias ls lsd
 
 alias ll 'ls -alF'
 alias la 'ls -A'

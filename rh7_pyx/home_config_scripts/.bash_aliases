@@ -1,7 +1,8 @@
 #! /bin/bash
 # vi: syntax=bash
+alias ls=lsd
 
-alias ll='ls -alF'
+alias ll='ls -AlF'
 alias la='ls -A'
 alias l='ls -CF'
 

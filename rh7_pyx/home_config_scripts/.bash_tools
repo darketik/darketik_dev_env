@@ -16,11 +16,11 @@ ISCAPE_PATH=$USER_OPT/eda/cadence/iscape.$ISCAPE_VER
 ISCAPE_BIN=$ISCAPE_PATH/bin
 ISCAPE_LIBS=$ISCAPE_VER/lib
 
-# XCELIUM_VER=2503
 XCELIUM_VER=2409
+# XCELIUM_VER=2503
 XCELIUM_PATH=$CADENCE_LOCAL_INSTALL_PATH/XCELIUM$XCELIUM_VER
-XCELIUM_BIN=$XCELIUM_PATH/tools/bin
-XCELIUM_LIBS=$XCELIUM_PATH/tools/lib:$XCELIUM_PATH/tools/vmgr/lib:$XCELIUM_PATH/tools/ep/lib
+XCELIUM_BIN=$XCELIUM_PATH/tools/bin/64bit:$XCELIUM_PATH/tools/bin
+XCELIUM_LIBS=$XCELIUM_PATH/tools/lib64:$XCELIUM_PATH/tools/lib:$XCELIUM_PATH/tools/vmgr/lib:$XCELIUM_PATH/tools/ep/lib
 
 # VERISIUM_VER=2409
 VERISIUM_VER=2503
@@ -183,4 +183,4 @@ echo "##############################################################"
 echo "# TOOLS specific scripts for setup"
 echo "##############################################################"
 source $STM_STxP5_TOOLCHAIN_BIN/tools_setup.sh
-source $OSSCADSUITE_PATH/environment
+# source $OSSCADSUITE_PATH/environment
