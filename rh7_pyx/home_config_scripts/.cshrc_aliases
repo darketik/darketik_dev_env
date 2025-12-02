@@ -2,7 +2,7 @@
 # vi: syntax=tcsh
 alias ls lsd
 
-alias ll 'ls -alF'
+alias ll 'ls -AlF'
 alias la 'ls -A'
 alias lt 'ls -lt'
 alias ltr 'ls -ltr'
@@ -13,6 +13,7 @@ alias whichproj 'head -3 $HOME/pyx_utils/projdef; grep -i "\!*" $HOME/pyx_utils/
 
 alias pyxca52_FR_img140 "source $HOME/pyx_utils/set_pyx_proj pyxca52 FR_img140"
 alias pyxca52_FR_img140_REGRESSION "source $HOME/pyx_utils/set_pyx_proj pyxca52 FR_img140_REGRESSION"
+alias pyxca52_FR_img140_GITCENTRIC "source $HOME/pyx_utils/set_pyx_proj pyxca52 FR_img140_GITCENTRIC"
 alias pyxca46a0 "source $HOME/pyx_utils/set_pyx_proj pyxca46a0"
 alias pkvl pyxca52_FR_img140
 alias ouranos pyxca46a0
