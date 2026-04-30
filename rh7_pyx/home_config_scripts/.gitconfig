@@ -35,6 +35,7 @@
 
 [color]
 	ui = auto
-
+	
 [credential]
-	helper = cache
+	helper = manager
+	credentialStore = cache

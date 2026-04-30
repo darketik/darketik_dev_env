@@ -86,7 +86,7 @@ complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' ?akefile | sed 's/[^a-zA-Z0-
 
 # >>> conda initialize >>>
 # FR> init conda from anaconda env
-eval "$(/isona2/rotenberg/work/opt/anaconda3/bin/conda shell.bash hook)"
+eval "$($HOME/work/opt/anaconda3/bin/conda shell.bash hook)"
 # <<< conda initialize <<<
 
 # print_sysinfo

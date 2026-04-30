@@ -154,6 +154,9 @@ set LLLM_CLANG_PATH=$USER_OPT/llvm-project-llvmorg-18.1.8
 set LLLM_CLANG_BIN=$LLLM_CLANG_PATH/bin
 set LLLM_CLANG_LIB=$LLLM_CLANG_PATH/lib
 
+# Git credential manager
+set GCM_PATH=$USER_OPT/gcm
+
 # wavedrom
 # TODO
 
@@ -212,6 +215,7 @@ setenv PATH $PCRE2_BIN\:$PATH
 setenv PATH $CPPCHECK_BIN\:$PATH
 setenv PATH $JAVAJDK_BIN\:$PATH
 setenv PATH $LLLM_CLANG_BIN\:$PATH
+setenv PATH $GCM_PATH\:$PATH
 setenv PATH $HOME/.local/bin\:$PATH
 # setenv PATH $PATH\:$COREV_SDK_BIN
 echo "PATH: $PATH"

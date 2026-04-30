@@ -136,6 +136,8 @@ LLLM_CLANG_PATH=$USER_OPT/llvm-project-llvmorg-18.1.8
 LLLM_CLANG_BIN=$LLLM_CLANG_PATH/bin
 LLLM_CLANG_LIB=$LLLM_CLANG_PATH/lib
 
+# Git credential manager
+GCM_PATH=$USER_OPT/gcm
 
 # wavedrom
 # TODO
