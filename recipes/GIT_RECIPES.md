@@ -27,6 +27,8 @@
 
 https://swcarpentry.github.io/git-novice/
 
+https://gitscripts.com/
+
 ## Externals ressources
 
 Add shh key to ssh-agent: https://gist.github.com/danieldogeanu/16c61e9b80345c5837b9e5045a701c99

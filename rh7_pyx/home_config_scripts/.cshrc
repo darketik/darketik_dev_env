@@ -27,6 +27,8 @@ if (-e $HOME/.cshrc_tools) source $HOME/.cshrc_tools
 # Aliases
 if (-e $HOME/.cshrc_aliases) source $HOME/.cshrc_aliases
 
+setenv SMB_USERNAME "PYXALIS/rotenberg"
+
 ## Set umask for new folder/files permissions defaut setting
 umask 022
 
