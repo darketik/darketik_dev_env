@@ -37,6 +37,4 @@
 	ui = auto
 	
 [credential]
-	# helper = manager
-	credentialStore = cache --timeout=31536000
-	helper = /isona1/FR_img140/work/opt/gcm/git-credential-manager
+	helper = cache --timeout=31536000

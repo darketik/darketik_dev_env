@@ -121,7 +121,6 @@ Installation uniquement sur mon user account. (pour l'instant)
   > rm $HOME/.git-completion.bash && ln -s $USER_LNX_ENV_PATH/.git-completion.bash
   > rm $HOME/.gitconfig && ln -s $USER_LNX_ENV_PATH/.gitconfig
   > ln -s $USER_LNX_ENV_PATH/pyx_utils
-  > ln -s $USER_LNX_ENV_PATH/.gitconfig
 
 - git completion:
   - link script
